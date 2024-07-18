@@ -1,0 +1,94 @@
+.iphone-frame {
+    width: 393px;
+    height: 852px;
+    background: #000000;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .title{
+    color: #fff;
+    margin-bottom: 10px;
+    position: absolute;
+    margin-top: -180%;
+    font-weight: bolder;
+
+  }
+
+  .search{
+    width: 296px;
+    height: 40px;
+    border-radius: 20px;
+    padding-left: 20px;
+    position: absolute;
+    margin-top: -130%;
+  }
+
+  .searchLogo{
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    margin-top: -130%;
+    margin-left: 65%;
+  }
+
+  .bar{
+    width: 8px;
+    height: 89px;
+    border-radius: 6px;
+    background-color: #311683;
+  }
+
+  .container1{
+    display: flex;
+    position: absolute;
+    margin-top: -100%;
+    margin-right: -60%;
+    font-size: 12px;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    position: relative;
+    margin-top: -60%;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    margin: 40px;
+}
+
+.textContainer {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    margin-left: 10px;
+    color: #fff; 
+}
+
+.writeBtn{
+  width: 69px;
+  height: 69px;
+  border-radius: 50px;
+  background-color: #311683;
+  border-style: none;
+  cursor: pointer;
+  position: absolute;
+  margin-top: 180%;
+  margin-left: 60%;
+  z-index: 10px;
+}
+
+.penLogo{
+  width: 33px;
+  height: 31px;
+}
