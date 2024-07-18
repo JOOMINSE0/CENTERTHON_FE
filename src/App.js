@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import React from 'react';
 import Board from "./pages/Board/board.js";
 import Createboard from "./pages/Board/createboard.js";
-import Modal from "./pages/Board/modal.js";
+import Modal from "./pages/Board/Modal.js";
 import Modaldetail from "./pages/Board/modaldetail.js";
 import './App.css';
 
