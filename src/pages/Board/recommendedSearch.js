@@ -1,45 +1,40 @@
+// RecommendedSearch.js
+import React from 'react';
 import './recommendedSearch.css';
-
+import { useNavigate } from 'react-router-dom';
 
 function RecommendedSearch() {
+
+    const navigate = useNavigate();
     return (
         <div className='iphone-frame'>
-            <div>
-                <img className='back-button' src='/img/back.png' alt='이전' />
-                <div className="title">추천 검색</div>
+            <div className="header">
+                <img className='back-button' src='/img/back.png' alt='이전'
+                    onClick={() => { navigate(-1); }} />
+                <div className="recommend-title">번역 기록</div>
             </div>
             <div>
-                <p>추천 검색어</p>
-                <div></div>
-            </div>
-            <div>
-                <p>많이 검색된 MZ 언어</p>
-                <div className="container">
-                    <div className="flex-container">
-                        <div className="bar"></div>
-                        <div className="textContainer">
-                            <p>완내스</p>
-                            <p>완전 내 스타일</p>
+                <p className="recommend-subtitle">다른 사용자들의 번역 기록</p>
+                <div className="recommend-container">
+                    {['콩콩따', '오늘 완전 쩔죽따지만 난 여전히 뜨아...', '문장 or 키워드', '스불재', '킹정', '억까'].map((text, index) => (
+                        <div key={index} className="recommend-flex-container">
+                            <div className="bar"></div>
+                            <div className="textContainer">
+                                {text}
+                            </div>
                         </div>
-                    </div>
-
-                    <div className="flex-container">
-                        <div className="bar"></div>
-                        <div className="textContainer">
-                            <p>오저치고</p>
-                            <p>완전 내 스타일</p>
-                        </div>
-                    </div>
+                    ))}
                 </div>
             </div>
-
-            <div>
-                12345
+            <div className="pagination">
+                <button>&lt;</button>
+                {[1, 2, 3, 4, 5].map((number, index) => (
+                    <div key={index} className={index === 0 ? 'active' : ''}>{number}</div>
+                ))}
+                <button>&gt;</button>
             </div>
-
-
         </div>
-    )
+    );
 }
 
 export default RecommendedSearch;

@@ -49,7 +49,7 @@ function Main() {
                     </div>
                     <div className='main-footer-button' onClick={() => { navigate('/recommended_search_1') }}>
                         <img src='/img/sphere_button.png' alt='추천 검색' />
-                        <span>추천 검색</span>
+                        <span>번역 기록</span>
                     </div>
                 </div>
             </div></div>
