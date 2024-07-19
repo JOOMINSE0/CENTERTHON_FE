@@ -53,6 +53,10 @@ function Translation() {
                     setIsRecording(false);
                 }
             };
+        }).catch((error) => {
+            if (error.name === 'NotAllowedError' || error.name === 'PermissionDeniedError') {
+                alert('마이크 권한을 허용해주세요.');
+            }
         });
     };
 
