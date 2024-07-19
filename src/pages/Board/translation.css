@@ -1,0 +1,108 @@
+.iphone-frameG {
+    width: 393px;
+    height: 852px;
+    background: linear-gradient(to bottom, #2A2566, #04010D);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 40px;
+}
+
+.cancle-button {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    width: 12px;
+    height: auto;
+}
+
+.trans-rotate-circle {
+    width: 204px;
+    height: 206.41px;
+    background-image: url('/public/img/sphere.png');
+    background-size: cover;
+    z-index: 1;
+    margin-top: -30px;
+    cursor: pointer;
+}
+
+.trans-description {
+    font-size: 16px;
+    color: #fff;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.trans-search-container {
+    display: flex;
+    width: 330px;
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 20px;
+    overflow: hidden;
+    align-items: center;
+    justify-content: space-between;
+    border: none;
+}
+
+.trans-search {
+    flex: 1;
+    height: 100%;
+    border: none;
+    padding-left: 15px;
+    font-size: 16px;
+    outline: none;
+}
+
+.trans-icons {
+    display: flex;
+    align-items: center;
+}
+
+.trans-search-button {
+    width: 40px;
+    height: 40px;
+    background: #311683;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-radius: 0 20px 20px 0;
+    margin: 0;
+    padding: 0;
+}
+
+.mic-icon-container {
+
+    cursor: pointer;
+    background-color: #fff;
+    margin: 0;
+
+    /* Adding vertical padding */
+    border-radius: 0;
+    border: none;
+}
+
+.mic-icon {
+    width: 34px;
+    height: 34px;
+    padding-top: 4px;
+    padding-bottom: 2px;
+}
+
+.trans-input {
+    width: 305px;
+    height: 348px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-style: none;
+    border-radius: 30px;
+    padding: 20px;
+    color: #fff;
+    margin-top: 20px;
+    resize: none;
+}
