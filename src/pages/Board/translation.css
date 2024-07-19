@@ -78,19 +78,16 @@
 }
 
 .mic-icon-container {
-
     cursor: pointer;
     background-color: #fff;
     margin: 0;
-
-    /* Adding vertical padding */
     border-radius: 0;
     border: none;
 }
 
 .mic-icon {
-    width: 34px;
-    height: 34px;
+    width: 32px;
+    height: 31px;
     padding-top: 4px;
     padding-bottom: 2px;
 }
