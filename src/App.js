@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />} /> {/* 메인 */}
         <Route path="/translation" element={<Translation />} /> {/* 번역 기능 */}
-        <Route path="/recommended_search_1" element={<RecommendedSearch />} /> {/* 추천 검색_1 */}
+        <Route path="/recommended_search_1" element={<RecommendedSearch />} /> {/* 번역 내역 */}
         <Route path="/board" element={<Board />} /> {/* MZ 언어 게시판 */}
         <Route path="/createboard" element={<Createboard />} /> {/* MZ 언어 작성 */}
         <Route path="/modal" element={<Modal />} /> {/* 작성하기 모달창 */}
