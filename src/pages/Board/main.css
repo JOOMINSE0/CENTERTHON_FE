@@ -1,0 +1,180 @@
+.frameMain {
+    width: 393px;
+    height: 852px;
+    background-image: url('/public/img/rectangle_container.png');
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logo {
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    width: 80px;
+    height: auto;
+}
+
+.main-title {
+    position: relative;
+    margin-top: 30px;
+    font-size: 32px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    z-index: 2;
+}
+
+.main-content {
+    text-align: center;
+    margin-top: 90px;
+}
+
+.main-subtitle {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.main-description {
+    font-size: 14px;
+    margin-bottom: 20px;
+    margin-top: 46px;
+    white-space: pre-line;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.main-rotate-circle {
+    width: 256px;
+    height: 259.02px;
+    background-image: url('/public/img/sphere.png');
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    margin-left: 70px;
+    margin-top: 40px;
+}
+
+
+.main-translate-button {
+    background-color: black;
+    color: white;
+    border: 0.5px solid white;
+    padding: 10px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 234px;
+    height: 58px;
+    font-weight: 700;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.main-translate-button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #A766FF, #FF9266);
+    transition: width 0.4s ease;
+    width: 0;
+    z-index: -1;
+}
+
+.main-translate-button:hover::after {
+    width: 100%;
+}
+
+.main-translate-button span {
+    position: relative;
+    z-index: 1;
+}
+
+.main-footer-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 90px;
+    background-color: transparent;
+    width: 393px;
+    height: 140px;
+    margin-right: 15px;
+}
+
+.main-footer-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 25px;
+}
+
+.main-footer-button img {
+    width: 81px;
+    height: 81px;
+    margin-bottom: 10px;
+}
+
+.main-footer-button span {
+    color: black;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.bouncing-text {
+    position: absolute;
+    top: 21%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 700;
+    font-size: 110px;
+    color: rgba(255, 255, 255, 0.8);
+    z-index: 0;
+    display: flex;
+    opacity: 0.5;
+    text-shadow: 0 1px 0 #ccc,
+        0 2px 0 #ccc,
+        0 3px 0 #ccc,
+        0 4px 0 #ccc,
+        0 5px 0 #ccc,
+        0 6px 0 transparent,
+        0 7px 0 transparent,
+        0 8px 0 transparent,
+        0 9px 0 transparent,
+        0 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+.bouncing-text span {
+    position: relative;
+    top: 20px;
+    animation: bounce 0.3s ease infinite alternate;
+}
+
+.bouncing-text span:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.bouncing-text span:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.bouncing-text span:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.bouncing-text span:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+    100% {
+        top: -10px;
+    }
+}
