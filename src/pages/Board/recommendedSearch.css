@@ -11,32 +11,27 @@
     padding-top: 20px;
 }
 
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    position: relative;
-}
-
-.back-button {
-    position: absolute;
-    left: 20px;
-    width: 12px;
-    height: auto;
-}
-
-.recommend-title {
+.title {
     color: #fff;
+    margin-bottom: 10px;
+    position: absolute;
+    margin-top: -180%;
     font-weight: bolder;
-    font-size: 16px;
-    text-align: center;
-    font-weight: 700;
+
+}
+
+.backLogo {
+    width: 8px;
+    height: 13px;
+    margin-top: -183%;
+    margin-right: 80%;
+    position: absolute;
+    cursor: pointer;
 }
 
 .recommend-subtitle {
     color: #fff;
-    margin-top: 50px;
+    margin-top: 130px;
     text-align: left;
     margin-left: 10px;
     font-size: 14px;
@@ -81,7 +76,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 45px;
+    margin-top: 25px;
     color: #fff;
     font-size: 14px;
 }
