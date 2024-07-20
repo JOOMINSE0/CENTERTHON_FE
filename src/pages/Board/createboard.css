@@ -11,11 +11,39 @@
     margin-right: auto;
 }
 
+.titleCB{
+    color: #fff;
+    margin-bottom: 10px;
+    position: absolute;
+    margin-top: -190%;
+    font-weight: bolder;
+}
+
+.topX{
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    margin-top: -183%;
+    margin-left: 80%;
+    cursor: pointer;
+}
+
 .searchCB{
-    width: 296px;
+    width: 254px;
     height: 40px;
-    border-radius: 20px;
+    border-radius: 20px 0px  0px 20px;
     padding-left: 20px;
+}
+
+.checkBtnCB{
+    border-radius: 0px 20px  20px 0px;
+    width: 64px;
+    height: 45px;
+    background-color: #311683;
+    color: #fff;
+    border-style: none;
+    cursor: pointer;
+    font-size: 13px;
 }
 
 .fontStyleCB{
@@ -24,12 +52,13 @@
 }
 
 .inputCB{
-    width: 305px;
+    width: 285px;
     height: 140px;
     background-color: rgba(255, 255, 255, 0.1);
     border-style: none;
     border-radius: 30px;
     padding-left: 20px;
+    padding-right: 20px;
     padding-top: 20px;
     color: #fff;
 }
@@ -50,4 +79,8 @@
 
 .locate{
     margin-top: -20%;
+}
+
+.flexContainerCB{
+    display: flex;
 }

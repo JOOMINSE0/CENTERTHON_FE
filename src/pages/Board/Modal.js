@@ -1,7 +1,7 @@
 import React from 'react';
 import './Modal.css';
 
-function Modal({ closeModal }) {
+function Modal({closeModal}) {
     return (
         <div className='iphone-frameM'>
             <div className='modal'>
