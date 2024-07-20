@@ -1,32 +1,39 @@
 import './modaldetail.css';
-import React, { useState } from 'react';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-function Modaldetail(){
+function Modaldetail({ closeModal, item }) {
+    const navigate = useNavigate();
 
-    return(
+    return (
         <div className='iphone-frameMD'>
             <div className='modalMD'>
-                <p>
+                <div className='modalLogoContainer'>
+                    <img
+                        className='modifyMD'
+                        src='../../../img/modifyLogo.png'
+                        alt='수정'
+                        onClick={() => { navigate('/createboard') }}
+                    />
                     <img
                         className='XMD'
                         src='../../../img/X.png'
                         alt='닫기'
+                        onClick={closeModal}
                     />
-                </p>
-                <div className="flex-containerMD">
-                <div className='barW'></div>
-                <p style={{paddingLeft:"10px"}}>갑통알</p>                    
                 </div>
-
-                <p className='textLocateMD'>갑자기 통장을 보니 알바해야 겠다는 생각이 든다.</p>
+                <div className="flex-containerMD">
+                    <div className='barW'></div>
+                    <p style={{ paddingLeft: "10px", fontSize: "22px" }}>{item.title}</p>
+                </div>
+                <p className='textLocateMD'>{item.description}</p>
                 <div className='horizantalMD-container'>
                     <div className='horizantalMD'></div>
                 </div>
-                
-                <p className='textLocateMD'>ex. 요즘 갑통알이야. 방학이라 그런가 돈을 많이 쓴 듯</p>
+                <p className='textLocateMD'>ex. 요즘 {item.title}이야. 방학이라 그런가 돈을 많이 쓴 듯</p>
             </div>
         </div>
-    )
+    );
 }
 
 export default Modaldetail;
