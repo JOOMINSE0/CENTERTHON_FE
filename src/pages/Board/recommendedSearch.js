@@ -8,11 +8,13 @@ function RecommendedSearch() {
     const navigate = useNavigate();
     return (
         <div className='iphone-frame'>
-            <div className="header">
-                <img className='back-button' src='/img/back.png' alt='이전'
-                    onClick={() => { navigate(-1); }} />
-                <div className="recommend-title">번역 기록</div>
-            </div>
+            <div className="title">번역 기록</div>
+            <img
+                className='backLogo'
+                src='../../../img/backLogo.png'
+                alt='뒤로가기'
+                onClick={() => navigate(-1)}
+            />
             <div>
                 <p className="recommend-subtitle">다른 사용자들의 번역 기록</p>
                 <div className="recommend-container">
