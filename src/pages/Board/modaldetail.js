@@ -5,6 +5,16 @@ import { useNavigate } from 'react-router-dom';
 function Modaldetail({ closeModal, item }) {
     const navigate = useNavigate();
 
+    const handleModifyClick = () => {
+        navigate('/createboard', {
+            state: {
+                mzLang: item.title,
+                langDesc: item.description,
+                example: 'ex. 요즘 ' + item.title + '이야. 방학이라 그런가 돈을 많이 쓴 듯' // 예문은 고정된 예문이 아닌 경우에는 item 예문에 맞게 수정 필요
+            }
+        });
+    };
+
     return (
         <div className='iphone-frameMD'>
             <div className='modalMD'>
@@ -13,7 +23,7 @@ function Modaldetail({ closeModal, item }) {
                         className='modifyMD'
                         src='../../../img/modifyLogo.png'
                         alt='수정'
-                        onClick={() => { navigate('/createboard') }}
+                        onClick={handleModifyClick}
                     />
                     <img
                         className='XMD'
