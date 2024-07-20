@@ -19,20 +19,32 @@
     text-align: left;
     background: linear-gradient(to bottom, #2A2566, #04010D);
     color: #fff;
-    z-index: 10px;
+    position: absolute;
 }
 
 .textLocateMD{
     padding-left: 40px;
     padding-right: 40px;
+    font-size: 14px;
+}
+
+.modalLogoContainer{
+    display: flex;
+    margin-left: 75%;
+    margin-top: 10%;
+}
+
+.modifyMD{
+    width: 2.6px;
+    height: 10.8px;
+    cursor: pointer;
 }
 
 .XMD{
     width: 10px;
     height: 10px;
-    margin-left: 85%;
-    margin-top: 5%;
     cursor: pointer;
+    margin-left: 20px;
 }
 
 .barW{
