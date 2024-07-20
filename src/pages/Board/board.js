@@ -38,6 +38,7 @@ function Board() {
     ];
 
     const displayedData = filteredData.length > 0 ? filteredData : data;
+    const existingWords = data.map(item => item.title);  // 기존 단어 목록
 
     return (
         <div className='iphone-frame'>
@@ -67,22 +68,22 @@ function Board() {
             </div>
 
             <div className='scroll'>
-              <div className="container">
-                {displayedData.map((item, index) => (
-                    <div
-                    key={index} onClick={() => handleFlexContainerClick(item)} className="flex-container">
-                        <div className="bar"></div>
-                        <div className="textContainer">
-                            <p>{item.title}</p>
-                            <p style={{ fontSize: "11px", marginTop: "-5px" }}>{item.description}</p>
+                <div className="container">
+                    {displayedData.map((item, index) => (
+                        <div
+                        key={index} onClick={() => handleFlexContainerClick(item)} className="flex-container">
+                            <div className="bar"></div>
+                            <div className="textContainer">
+                                <p>{item.title}</p>
+                                <p style={{ fontSize: "11px", marginTop: "-5px" }}>{item.description}</p>
+                            </div>
                         </div>
-                    </div>
-                ))}
-            </div>  
+                    ))}
+                </div>  
             </div>
             
             <button
-                onClick={() => { navigate('/createboard') }}
+                onClick={() => { navigate('/createboard', { state: { existingWords } }) }}
                 className='writeBtn'>
                 <img
                     className='penLogo'
