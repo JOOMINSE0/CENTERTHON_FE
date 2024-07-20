@@ -22,7 +22,7 @@ function Board() {
 
     const handleSearchChange = (e) => {
         setSearchQuery(e.target.value);
-        setFilteredData([]);  // 검색어 변경 시 필터링된 데이터 초기화
+        setFilteredData([]);  
     };
 
     const handleSearchClick = () => {
@@ -38,7 +38,7 @@ function Board() {
     ];
 
     const displayedData = filteredData.length > 0 ? filteredData : data;
-    const existingWords = data.map(item => item.title);  // 기존 단어 목록
+    const existingWords = data.map(item => item.title);  
 
     return (
         <div className='iphone-frame'>
