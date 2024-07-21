@@ -1,0 +1,41 @@
+.searchTR{
+    width: 254px;
+    height: 44px;
+    border-radius: 20px 0px  0px 20px;
+    padding-left: 20px;
+    border-style: none;
+}
+
+.checkBtnTR{
+    border-radius: 0px 20px  20px 0px;
+    width: 50px;
+    height: 45px;
+    background-color: #311683;
+    color: #fff;
+    border-style: none;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.containerTR{
+    display: flex;
+    position: relative;
+    margin-top: -60%;
+}
+
+.word{
+    width: 89px;
+    height: 37px;
+    background-color: #fff;
+    border-radius: 40px;
+    margin-right: -50%;
+    margin-top: 10%;
+}
+
+.answer{
+    width: 253px;
+    height: 119px;
+    background-color: #fff;
+    border-radius: 30px;
+    margin-top: 20%;
+}
