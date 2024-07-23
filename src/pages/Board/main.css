@@ -49,8 +49,8 @@
 }
 
 .main-rotate-circle {
-    width: 256px;
-    height: 259.02px;
+    width: 260px;
+    height: 263px;
     background-image: url('/public/img/sphere.png');
     background-size: cover;
     position: relative;
@@ -113,7 +113,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin: 0 25px;
+    margin: 0 30px;
 }
 
 .main-footer-button img {
@@ -135,15 +135,16 @@
     transform: translateX(-50%);
     font-weight: 700;
     font-size: 110px;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(112, 77, 216, 0.6);
+    /* 메인 텍스트 색상 */
     z-index: 0;
     display: flex;
     opacity: 0.5;
-    text-shadow: 0 1px 0 #ccc,
-        0 2px 0 #ccc,
-        0 3px 0 #ccc,
-        0 4px 0 #ccc,
-        0 5px 0 #ccc,
+    text-shadow: 0 1px 0 rgba(112, 77, 216, 0.6),
+        0 2px 0 rgba(112, 77, 216, 0.9),
+        0 3px 0 rgba(112, 77, 216, 0.9),
+        0 4px 0 rgba(112, 77, 216, 0.9),
+        0 5px 0 rgba(112, 77, 216, 0.9),
         0 6px 0 transparent,
         0 7px 0 transparent,
         0 8px 0 transparent,

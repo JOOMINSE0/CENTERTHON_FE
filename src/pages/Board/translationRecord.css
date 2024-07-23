@@ -1,0 +1,181 @@
+.iphone-frame {
+    width: 393px;
+    height: 852px;
+    background: #000000;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 10px 20px;
+}
+
+.title {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.backLogo {
+    width: 8px;
+    height: 13px;
+    cursor: pointer;
+}
+
+.refreshLogo {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.content-wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.character-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.character-image {
+    width: 80px;
+    height: auto;
+    margin-top: 15px;
+    margin-left: 12px;
+}
+
+.name-image {
+    width: 60px;
+    height: auto;
+    position: absolute;
+    top: 100px;
+    left: 20px;
+}
+
+.translationRecord-description {
+    background-color: #311683;
+    opacity: 0.6;
+    color: #fff;
+    border-radius: 20px;
+    padding: 18px 20px;
+    font-size: 12px;
+    line-height: 1.5;
+    max-width: 220px;
+    margin-top: 50px;
+    margin-left: -10px;
+}
+
+.subtitle-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    margin-top: 30px;
+    margin-left: 50px;
+}
+
+.recommend-subtitle {
+    color: #fff;
+    font-size: 14px;
+}
+
+.refreshIcon {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    margin-right: 50px;
+}
+
+.recommend-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.recommend-flex-container {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 329px;
+    height: 60px;
+}
+
+.recommend-flex-container .bar {
+    width: 6px;
+    height: 80%;
+    background-color: #311683;
+    border-radius: 5px;
+}
+
+.recommend-flex-container .textContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    font-size: 14px;
+    text-align: left;
+}
+
+.textContainer .title {
+    font-size: 16px;
+    margin-top: -13px;
+}
+
+.textContainer .description {
+    font-size: 11px;
+    margin-top: 40px;
+    opacity: 0.8;
+    color: #929099;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    color: #fff;
+    font-size: 14px;
+}
+
+.pagination div {
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.pagination .active {
+    color: #311683;
+    font-weight: bold;
+}
+
+.pagination button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #311683;
+    border-radius: 100%;
+    padding: 2px 3px;
+    font-size: 11px;
+    margin: 5px;
+}

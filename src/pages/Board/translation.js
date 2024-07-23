@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './translation.css';
@@ -7,6 +7,7 @@ function Translation() {
     const navigate = useNavigate();
     const [inputValue, setInputValue] = useState('');
     const [translatedText, setTranslatedText] = useState('');
+    const [recommendedKeywords, setRecommendedKeywords] = useState([]);
     const [stream, setStream] = useState(null);
     const [media, setMedia] = useState(null);
     const [isRecording, setIsRecording] = useState(false);
@@ -14,7 +15,19 @@ function Translation() {
     const [analyser, setAnalyser] = useState(null);
     const [audioUrl, setAudioUrl] = useState(null);
     const [recordedFileName, setRecordedFileName] = useState('');
-    const fetchURL = "http://ec2-3-36-151-125.ap-northeast-2.compute.amazonaws.com:8080/";
+    const fetchURL = "http://ec2-3-34-152-209.ap-northeast-2.compute.amazonaws.com:8080/";
+
+    useEffect(() => {
+        axios.get(fetchURL + 'api/recommend')
+            .then(response => {
+                console.log("추천 검색어 GET")
+                console.log(response.data)
+                setRecommendedKeywords(response.data);
+            })
+            .catch(error => {
+                console.error('Error fetching recommended keywords:', error);
+            });
+    }, []);
 
     const onRecAudio = () => {
         const audioContext = new (window.AudioContext || window.webkitAudioContext)();
@@ -104,7 +117,11 @@ function Translation() {
                 });
         } else {
             console.log('Text input:', inputValue);
-            axios.post(fetchURL + 'api/translate', { question: inputValue })
+            axios.post(fetchURL + 'api/translate', { question: inputValue }, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
                 .then(response => {
                     console.log("텍스트 번역");
                     setTranslatedText(response.data.translatedText);
@@ -159,13 +176,22 @@ function Translation() {
                         onClick={handleMicClick}
                     />
                 </div>
-                <button className='trans-search-button' onClick={handleTranslateAndDownload}>▶</button>
+                <button className='trans-search-button' onClick={handleTranslate}>▶</button>
             </div>
             <textarea
                 className='trans-input'
                 value={translatedText}
                 readOnly
             ></textarea>
+
+            <div>
+                <div className='recommend-translation-title'>추천 검색어</div>
+                <div className='recommend-translation-container'>
+                    {recommendedKeywords.map((keyword, index) => (
+                        <div key={index}>{keyword}</div>
+                    ))}
+                </div>
+            </div>
         </div>
     );
 }

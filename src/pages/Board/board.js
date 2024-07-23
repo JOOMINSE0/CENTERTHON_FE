@@ -49,11 +49,11 @@ function Board() {
                 alt='뒤로가기'
                 onClick={() => navigate(-1)}
             />
-            <input 
-                className='search' 
-                placeholder='검색어를 입력하세요' 
-                value={searchQuery} 
-                onChange={handleSearchChange} 
+            <input
+                className='search'
+                placeholder='검색어를 입력하세요'
+                value={searchQuery}
+                onChange={handleSearchChange}
             />
             <img
                 className='searchLogo'
@@ -71,7 +71,7 @@ function Board() {
                 <div className="container">
                     {displayedData.map((item, index) => (
                         <div
-                        key={index} onClick={() => handleFlexContainerClick(item)} className="flex-container">
+                            key={index} onClick={() => handleFlexContainerClick(item)} className="flex-container">
                             <div className="bar"></div>
                             <div className="textContainer">
                                 <p>{item.title}</p>
@@ -79,9 +79,9 @@ function Board() {
                             </div>
                         </div>
                     ))}
-                </div>  
+                </div>
             </div>
-            
+
             <button
                 onClick={() => { navigate('/createboard', { state: { existingWords } }) }}
                 className='writeBtn'>
