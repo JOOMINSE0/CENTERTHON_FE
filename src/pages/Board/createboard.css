@@ -1,4 +1,4 @@
-.iphone-frameG{
+.iphone-frameG {
     width: 393px;
     height: 852px;
     background: linear-gradient(to bottom, #2A2566, #04010D);
@@ -11,7 +11,7 @@
     margin-right: auto;
 }
 
-.titleCB{
+.titleCB {
     color: #fff;
     margin-bottom: 10px;
     position: absolute;
@@ -19,7 +19,7 @@
     font-weight: bolder;
 }
 
-.topX{
+.topX {
     width: 12px;
     height: 12px;
     position: absolute;
@@ -27,6 +27,7 @@
     margin-left: 80%;
     cursor: pointer;
 }
+
 
 .searchCB{
     width: 285px;
@@ -49,12 +50,12 @@
     z-index: 1;
 }
 
-.fontStyleCB{
+.fontStyleCB {
     color: #fff;
     font-size: 16px;
 }
 
-.inputCB{
+.inputCB {
     width: 285px;
     height: 140px;
     background-color: rgba(255, 255, 255, 0.1);
@@ -66,7 +67,7 @@
     color: #fff;
 }
 
-.finishBtn{
+.finishBtn {
     position: absolute;
     margin-top: 180%;
     width: 318px;
@@ -80,10 +81,10 @@
 
 }
 
-.locate{
+.locate {
     margin-top: -20%;
 }
 
-.flexContainerCB{
+.flexContainerCB {
     display: flex;
 }

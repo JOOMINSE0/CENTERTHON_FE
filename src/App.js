@@ -6,9 +6,9 @@ import Modal from "./pages/Board/Modal.js";
 import Modaldetail from "./pages/Board/modaldetail.js";
 import './App.css';
 import Translation from "./pages/Board/translation.js";
-import RecommendedSearch from "./pages/Board/recommendedSearch.js";
 import Main from "./pages/Board/main.js";
-import Translationrecord from './pages/Board/translationrecord.js';
+
+import TranslationRecord from "./pages/Board/translationRecord.js";
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />} /> {/* 메인 */}
         <Route path="/translation" element={<Translation />} /> {/* 번역 기능 */}
-        <Route path="/recommended_search_1" element={<RecommendedSearch />} /> {/* 번역 내역 */}
+        <Route path="/translation_record_1" element={<TranslationRecord />} /> {/* 번역 기록 1 */}
         <Route path="/board" element={<Board />} /> {/* MZ 언어 게시판 */}
         <Route path="/createboard" element={<Createboard />} /> {/* MZ 언어 작성 */}
         <Route path="/modal" element={<Modal />} /> {/* 작성하기 모달창 */}

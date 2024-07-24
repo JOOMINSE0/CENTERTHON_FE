@@ -1,3 +1,9 @@
+@media (max-width: 100px) {
+    .title {
+        font-size: 20px;
+    }
+}
+
 .frameMain {
     width: 393px;
     height: 852px;
@@ -49,8 +55,8 @@
 }
 
 .main-rotate-circle {
-    width: 256px;
-    height: 259.02px;
+    width: 260px;
+    height: 263px;
     background-image: url('/public/img/sphere.png');
     background-size: cover;
     position: relative;
@@ -113,7 +119,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin: 0 25px;
+    margin: 0 30px;
 }
 
 .main-footer-button img {
@@ -128,27 +134,35 @@
     font-weight: 700;
 }
 
+@font-face {
+    font-family: 'PureMechanic';
+    src: url('/public/fonts/PureMechanic.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .bouncing-text {
     position: absolute;
-    top: 21%;
+    top: 22%;
     left: 50%;
     transform: translateX(-50%);
+    font-family: 'PureMechanic', sans-serif;
     font-weight: 700;
-    font-size: 110px;
-    color: rgba(255, 255, 255, 0.8);
+    font-size: 117px;
     z-index: 0;
     display: flex;
-    opacity: 0.5;
-    text-shadow: 0 1px 0 #ccc,
-        0 2px 0 #ccc,
-        0 3px 0 #ccc,
-        0 4px 0 #ccc,
-        0 5px 0 #ccc,
-        0 6px 0 transparent,
-        0 7px 0 transparent,
-        0 8px 0 transparent,
-        0 9px 0 transparent,
-        0 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+.bouncing-text:first-of-type {
+    color: rgba(49, 22, 131, 0.6);
+}
+
+.bouncing-text:nth-of-type(3) {
+    color: rgba(49, 22, 131, 0.6);
+}
+
+.bouncing-text:nth-of-type(2) {
+    color: rgba(49, 22, 131, 0.3);
 }
 
 .bouncing-text span {

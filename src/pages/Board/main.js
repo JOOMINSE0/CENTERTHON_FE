@@ -44,11 +44,11 @@ function Main() {
                 </button>
                 <div className='main-footer-buttons'>
                     <div className='main-footer-button' onClick={() => { navigate('/board') }}>
-                        <img src='/img/sphere_button.png' alt='MZ 언어 게시판' />
+                        <img src='/img/sphere1.png' alt='MZ 언어 게시판' />
                         <span>MZ 언어 게시판</span>
                     </div>
-                    <div className='main-footer-button' onClick={() => { navigate('/recommended_search_1') }}>
-                        <img src='/img/sphere_button.png' alt='추천 검색' />
+                    <div className='main-footer-button' onClick={() => { navigate('/translation_record_1') }}>
+                        <img src='/img/sphere2.png' alt='추천 검색' />
                         <span>번역 기록</span>
                     </div>
                 </div>
