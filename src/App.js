@@ -5,10 +5,10 @@ import Createboard from "./pages/Board/createboard.js";
 import Modal from "./pages/Board/Modal.js";
 import Modaldetail from "./pages/Board/modaldetail.js";
 import './App.css';
+import Translation from "./pages/Board/translation.js";
 import Translationrecord1 from "./pages/Board/translationrecord1.js";
 import Main from "./pages/Board/main.js";
 import Translationrecord2 from "./pages/Board/translationrecord2.js";
-import Translation from "./pages/Board/main.js";
 
 function App() {
   return (

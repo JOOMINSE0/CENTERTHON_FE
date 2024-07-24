@@ -1,138 +1,182 @@
-.iphone-frameG {
+.iphone-frame {
     width: 393px;
     height: 852px;
-    background: linear-gradient(to bottom, #2A2566, #04010D);
+    background: #000000;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 40px;
+    padding-top: 20px;
 }
 
-.cancle-button {
-    position: absolute;
-    top: 30px;
-    right: 20px;
-    width: 12px;
-    height: auto;
-}
-
-.trans-rotate-circle {
-    width: 204px;
-    height: 206.41px;
-    background-image: url('/public/img/sphere.png');
-    background-size: cover;
-    z-index: 1;
-    margin-top: -30px;
-    cursor: pointer;
-}
-
-.trans-description {
-    font-size: 16px;
-    color: #fff;
-    margin-top: 20px;
-    text-align: center;
-}
-
-.trans-search-container {
+.header {
+    width: 100%;
     display: flex;
-    width: 330px;
-    height: 40px;
-    margin-top: 10px;
-    border-radius: 20px;
-    overflow: hidden;
-    align-items: center;
     justify-content: space-between;
-    border: none;
-}
-
-.trans-search {
-    flex: 1;
-    height: 100%;
-    border: none;
-    padding-left: 15px;
-    font-size: 16px;
-    outline: none;
-}
-
-.trans-icons {
-    display: flex;
     align-items: center;
-}
-
-.trans-search-button {
-    width: 40px;
-    height: 40px;
-    background: #311683;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    border-radius: 0 20px 20px 0;
-    margin: 0;
-    padding: 0;
-}
-
-.mic-icon-container {
-    cursor: pointer;
-    background-color: #fff;
-    margin: 0;
-    border-radius: 0;
-    border: none;
-}
-
-.mic-icon {
-    width: 32px;
-    height: 31px;
-    padding-top: 4px;
-    padding-bottom: 2px;
-}
-
-.trans-input {
-    width: 305px;
-    height: 256px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-style: none;
-    border-radius: 30px;
-    padding: 20px;
-    color: #fff;
-    margin-top: 20px;
-    resize: none;
-}
-
-.recommend-translation-title {
-    color: #fff;
-    margin-top: 30px;
-    text-align: left;
-    font-size: 14px;
-    margin-left: -150px;
-}
-
-.recommend-translation-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-left: 26px;
-    margin-top: 10px;
-}
-
-.recommend-translation-container div {
-    color: #fff;
-    font-size: 14px;
-    height: 20px;
-    background-color: #311683;
-    border-radius: 20px;
-    padding: 6px 16px;
-    cursor: pointer;
-}
-
-.mozee-text {
-    width: 350px;
     position: relative;
-    margin-top: -100px;
-    margin-bottom: 60px;
+    padding: 10px 20px;
+}
+
+.title {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.backLogo {
+    width: 8px;
+    height: 13px;
+    cursor: pointer;
+}
+
+.refreshLogo {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.content-wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.character-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.character-image {
+    width: 80px;
+    height: auto;
+    margin-top: 15px;
+    margin-left: 12px;
+}
+
+.name-image {
+    width: 60px;
+    height: auto;
+    position: absolute;
+    top: 100px;
+    left: 23px;
+}
+
+.translationRecord-description {
+    background-color: #311683;
+    opacity: 0.6;
+    color: #fff;
+    border-radius: 20px;
+    padding: 18px 20px;
+    font-size: 12px;
+    line-height: 1.5;
+    max-width: 220px;
+    margin-top: 50px;
+    margin-left: -10px;
+}
+
+.subtitle-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    margin-top: 30px;
+    margin-left: 50px;
+}
+
+.recommend-subtitle {
+    color: #fff;
+    font-size: 14px;
+}
+
+.refreshIcon {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    margin-right: 50px;
+}
+
+.recommend-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 30px;
+    height: 450px;
+}
+
+.recommend-flex-container {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 329px;
+    height: 60px;
+}
+
+.recommend-flex-container .bar {
+    width: 6px;
+    height: 80%;
+    background-color: #311683;
+    border-radius: 5px;
+}
+
+.recommend-flex-container .textContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    font-size: 14px;
+    text-align: left;
+}
+
+.textContainer .title {
+    font-size: 16px;
+    margin-top: -13px;
+}
+
+.textContainer .description {
+    font-size: 11px;
+    margin-top: 40px;
+    opacity: 0.8;
+    color: #929099;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    color: #fff;
+    font-size: 14px;
+}
+
+.pagination div {
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.pagination .active {
+    color: #311683;
+    font-weight: bold;
+}
+
+.pagination button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #311683;
+    border-radius: 100%;
+    padding: 2px 3px;
+    font-size: 11px;
+    margin: 5px;
 }

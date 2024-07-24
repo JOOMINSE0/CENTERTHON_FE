@@ -24,7 +24,7 @@
 }
 
 .question {
-    width: 190px;
+    width: 170px;
     min-height: 30px;
     background-color: #fff;
     border-radius: 40px;
@@ -32,6 +32,8 @@
     margin-top: 10%;
     padding: 9px;
     display: inline-block;
+    font-size: 14px;
+    text-align: center;
 }
 
 .answer {
@@ -42,6 +44,7 @@
     margin-top: 20%;
     padding: 9px;
     display: inline-block;
+    font-size: 14px;
 }
 
 
