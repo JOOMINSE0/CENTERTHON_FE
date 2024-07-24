@@ -28,22 +28,26 @@
     cursor: pointer;
 }
 
-.searchCB {
-    width: 254px;
+
+.searchCB{
+    width: 285px;
     height: 40px;
-    border-radius: 20px 0px 0px 20px;
+    border-radius: 20px;
     padding-left: 20px;
 }
 
-.checkBtnCB {
+.checkBtnCB{
     border-radius: 0px 20px 20px 0px;
     width: 64px;
-    height: 45px;
+    height: 47px;
     background-color: #311683;
     color: #fff;
     border-style: none;
     cursor: pointer;
     font-size: 13px;
+    position: absolute;
+    right: 10%;
+    z-index: 1;
 }
 
 .fontStyleCB {

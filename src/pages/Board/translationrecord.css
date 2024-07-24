@@ -19,23 +19,36 @@
 
 .containerTR{
     display: flex;
-    position: relative;
-    margin-top: -60%;
+    position: absolute;
+    margin-top: -140%;
 }
 
-.word{
-    width: 89px;
-    height: 37px;
+.question {
+    width: 190px;
+    min-height: 30px;
     background-color: #fff;
     border-radius: 40px;
-    margin-right: -50%;
+    margin-right: -25%;
     margin-top: 10%;
+    padding: 9px;
+    display: inline-block;
 }
 
-.answer{
+.answer {
     width: 253px;
-    height: 119px;
+    min-height: 119px;
     background-color: #fff;
     border-radius: 30px;
     margin-top: 20%;
+    padding: 9px;
+    display: inline-block;
+}
+
+
+.MoziS{
+    width: 65px;
+    height: 65px;
+    margin-top: 10%;
+    margin-bottom: -18%;
+    margin-left: -60%;
 }
