@@ -38,7 +38,7 @@ function Main() {
                     MZ와의 대화가 어려우셨나요?<br />
                     이해하기 어려웠던 MZ 언어를 검색해보세요.
                 </p>
-                <button className='main-translate-button' onClick={() => { navigate('/translation') }}>
+                <button className='main-translate-button' onClick={() => { navigate('/translationrecord_1') }}>
                     MZ 언어 번역하기
                     <span style={{ marginLeft: "12px" }}>►</span>
                 </button>
@@ -47,7 +47,7 @@ function Main() {
                         <img src='/img/sphere1.png' alt='MZ 언어 게시판' />
                         <span>MZ 언어 게시판</span>
                     </div>
-                    <div className='main-footer-button' onClick={() => { navigate('/translation_record_1') }}>
+                    <div className='main-footer-button' onClick={() => { navigate('/translationrecord_1') }}>
                         <img src='/img/sphere2.png' alt='추천 검색' />
                         <span>번역 기록</span>
                     </div>

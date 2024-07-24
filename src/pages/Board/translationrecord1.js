@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import './translation.css';
+import './translationrecord1.css';
 
-function Translation() {
+function Translationrecord1() {
     const navigate = useNavigate();
     const [inputValue, setInputValue] = useState('');
     const [translatedText, setTranslatedText] = useState('');
@@ -202,4 +202,4 @@ function Translation() {
     );
 }
 
-export default Translation;
+export default Translationrecord1;
