@@ -7,6 +7,7 @@ import Modaldetail from "./pages/Board/modaldetail.js";
 import './App.css';
 import Translation from "./pages/Board/translation.js";
 import Main from "./pages/Board/main.js";
+
 import TranslationRecord from "./pages/Board/translationRecord.js";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/createboard" element={<Createboard />} /> {/* MZ 언어 작성 */}
         <Route path="/modal" element={<Modal />} /> {/* 작성하기 모달창 */}
         <Route path="/modaldetail" element={<Modaldetail />} /> {/* 언어 게시판 모달창 */}
+        <Route path="/translationrecord" element={<Translationrecord />} /> {/* 언어 게시판 모달창 */}        
       </Routes>
     </Router>
   );
