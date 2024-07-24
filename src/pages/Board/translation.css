@@ -127,4 +127,12 @@
     background-color: #311683;
     border-radius: 20px;
     padding: 6px 16px;
+    cursor: pointer;
+}
+
+.mozee-text {
+    width: 350px;
+    position: relative;
+    margin-top: -100px;
+    margin-bottom: 60px;
 }

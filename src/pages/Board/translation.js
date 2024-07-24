@@ -20,14 +20,14 @@ function Translation() {
     useEffect(() => {
         axios.get(fetchURL + 'api/recommend')
             .then(response => {
-                console.log("추천 검색어 GET")
-                console.log(response.data)
+                console.log("추천 검색어 GET 성공");
+                console.log(response.data);
                 setRecommendedKeywords(response.data);
             })
             .catch(error => {
-                console.error('Error fetching recommended keywords:', error);
+                console.error('Error fetching recommended keywords:', error.response || error.message);
             });
-    }, []);
+    }, [fetchURL]);
 
     const onRecAudio = () => {
         const audioContext = new (window.AudioContext || window.webkitAudioContext)();
@@ -109,11 +109,12 @@ function Translation() {
                 }
             })
                 .then(response => {
-                    console.log("파일 번역");
-                    setTranslatedText(response.data.translatedText);
+                    console.log("파일 번역 성공");
+                    console.log(response.data);
+                    setTranslatedText(response.data);
                 })
                 .catch(error => {
-                    console.error('Error uploading file:', error);
+                    console.error('Error uploading file:', error.response || error.message);
                 });
         } else {
             console.log('Text input:', inputValue);
@@ -123,11 +124,11 @@ function Translation() {
                 }
             })
                 .then(response => {
-                    console.log("텍스트 번역");
+                    console.log("텍스트 번역 성공");
                     setTranslatedText(response.data.translatedText);
                 })
                 .catch(error => {
-                    console.error('Error translating text:', error);
+                    console.error('Error translating text:', error.response || error.message);
                 });
         }
 
@@ -161,7 +162,12 @@ function Translation() {
             <img className='cancle-button' src='/img/X.png' alt='취소버튼'
                 onClick={() => { navigate('/') }} />
             <div className='trans-rotate-circle'></div>
-            <p className='trans-description'>번역이 필요한 MZ 언어 · 문장을 입력하세요.</p>
+            <img
+                className='mozee-text'
+                src='/img/MoZee_text.png'
+                alt='모지 텍스트'
+                onClick={handleMicClick}
+            />            <p className='trans-description'>번역이 필요한 MZ 언어 · 문장을 입력하세요.</p>
             <div className='trans-search-container'>
                 <input
                     className='trans-search'
