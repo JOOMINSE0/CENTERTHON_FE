@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import './translationrecord.css';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import './translationrecord2.css';
 
-function Translationrecord() {
+function Translationrecord2() {
     const navigate = useNavigate();
     const [questionHist, setQuestionHist] = useState('');
     const [answerHist, setAnswerHist] = useState('');
@@ -30,7 +30,11 @@ function Translationrecord() {
                 onClick={() => navigate(-1)}
             />
             <div className='containerTR'>
-                <input className='searchTR' />
+                <input
+                    className='searchTR'
+                    value={questionHist} // questionHist 값을 표시
+                    readOnly // 수정 불가능하게 설정
+                />
                 <button className='checkBtnTR'>
                     <img style={{ width: "14px" }} src='../../../img/tri.png' />
                 </button>
@@ -49,4 +53,4 @@ function Translationrecord() {
     );
 }
 
-export default Translationrecord;
+export default Translationrecord2;
