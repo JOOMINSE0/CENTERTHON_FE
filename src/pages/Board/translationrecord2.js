@@ -32,8 +32,8 @@ function Translationrecord2() {
             <div className='containerTR'>
                 <input
                     className='searchTR'
-                    value={questionHist} // questionHist 값을 표시
-                    readOnly // 수정 불가능하게 설정
+                    value={questionHist}
+                    readOnly
                 />
                 <button className='checkBtnTR'>
                     <img style={{ width: "14px" }} src='../../../img/tri.png' />

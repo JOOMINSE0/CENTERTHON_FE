@@ -25,6 +25,15 @@ function Createboard() {
         }
     }, [location.state]);
 
+    useEffect(() => {
+        if (location.state?.isEdit) {
+            setIsEdit(true);
+            setMzLang(location.state.mzLang);
+            setLangDesc(location.state.langDesc?.[0] || '');
+            setExample(location.state.example?.join('\n') || '');
+        }
+    }, [location.state]);
+
     const handleMzLangChange = (e) => {
         const newValue = e.target.value;
         setMzLang(newValue);
@@ -108,7 +117,7 @@ function Createboard() {
                         placeholder='MZ언어를 입력해주세요.'
                         value={mzLang}
                         onChange={handleMzLangChange}
-                        disabled={isEdit}
+                        disabled={isEdit} // 수정 모드일 때 비활성화
                     />
                     {!isEdit && (
                         <button

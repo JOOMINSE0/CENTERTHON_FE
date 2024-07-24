@@ -27,7 +27,9 @@ function Modaldetail({ closeModal, item }) {
             state: {
                 mzLang: detail.word,
                 langDesc: detail.description,
-                example: detail.exsentence
+                example: detail.exsentence,
+                isEdit: true, // 추가된 부분
+                itemId: item.id // 추가된 부분
             }
         });
     };
