@@ -100,7 +100,13 @@ function Translation() {
     const handleTranslate = () => {
         if (audioUrl && inputValue === recordedFileName) {
             console.log('Recorded file:', inputValue);
+
             const formData = new FormData();
+            formData.append('guestbookDto', new Blob([JSON.stringify({
+                guestContent: inputValue,
+                anonymous: true,
+                username: 'guest'
+            })], { type: 'application/json' }));
             formData.append('file', audioUrl);
 
             axios.post(fetchURL + 'api/translate/stt', formData, {
@@ -110,7 +116,6 @@ function Translation() {
             })
                 .then(response => {
                     console.log("파일 번역 성공");
-                    console.log(response.data);
                     setTranslatedText(response.data);
                 })
                 .catch(error => {
@@ -118,14 +123,14 @@ function Translation() {
                 });
         } else {
             console.log('Text input:', inputValue);
-            axios.post(fetchURL + 'api/translate', { question: inputValue }, {
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
+            const encodedInputValue = encodeURIComponent(inputValue);
+            const url = `${fetchURL}api/translate?question=${encodedInputValue}`;
+            console.log('Request URL:', url);
+
+            axios.post(url)
                 .then(response => {
                     console.log("텍스트 번역 성공");
-                    setTranslatedText(response.data.translatedText);
+                    setTranslatedText(response.data);
                 })
                 .catch(error => {
                     console.error('Error translating text:', error.response || error.message);
@@ -167,7 +172,8 @@ function Translation() {
                 src='/img/MoZee_text.png'
                 alt='모지 텍스트'
                 onClick={handleMicClick}
-            />            <p className='trans-description'>번역이 필요한 MZ 언어 · 문장을 입력하세요.</p>
+            />
+            <p className='trans-description'>번역이 필요한 MZ 언어 · 문장을 입력하세요.</p>
             <div className='trans-search-container'>
                 <input
                     className='trans-search'
@@ -182,7 +188,7 @@ function Translation() {
                         onClick={handleMicClick}
                     />
                 </div>
-                <button className='trans-search-button' onClick={handleTranslate}>▶</button>
+                <button className='trans-search-button' onClick={handleTranslateAndDownload}>▶</button>
             </div>
             <textarea
                 className='trans-input'

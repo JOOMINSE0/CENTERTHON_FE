@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 function Translationrecord1() {
     const navigate = useNavigate();
     const [data, setData] = useState([]);
-    const fetchURL = "http://ec2-3-34-152-209.ap-northeast-2.compute.amazonaws.com:8080/";
+    const fetchURL = "https://ec2-3-34-152-209.ap-northeast-2.compute.amazonaws.com:8080/";
 
     useEffect(() => {
         axios.get(fetchURL + 'api/history')
