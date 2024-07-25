@@ -11,7 +11,7 @@ function Board() {
     const [searchQuery, setSearchQuery] = useState('');
     const [data, setData] = useState([]);
     const [error, setError] = useState(null);
-    const [sortOption, setSortOption] = useState('date'); // 기본 정렬 기준을 'date'로 설정
+    const [sortOption, setSortOption] = useState('date');
 
     const fetchData = async (url) => {
         try {
