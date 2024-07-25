@@ -192,7 +192,7 @@ function Translation() {
                 className='trans-input'
                 value={translatedText}
                 readOnly
-
+            />
             <div className='recommend-translation-title'>추천 검색어</div>
             <div className='recommend-translation-container'>
                 {recommendedKeywords.map((keyword, index) => (

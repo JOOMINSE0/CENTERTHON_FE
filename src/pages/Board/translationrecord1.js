@@ -77,7 +77,7 @@ function Translationrecord1() {
                     <div key={index} className="recommend-flex-container">
                         <div className="bar"></div>
                         <div className="textContainer">
-                            <p className="title">{truncateText(item.questionHist, 17)}</p>
+                            <p className="title">{truncateText(item.questionHist, 17)} </p>
                         </div>
                     </div>
                 ))}
