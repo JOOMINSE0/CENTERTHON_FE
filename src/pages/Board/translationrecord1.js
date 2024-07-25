@@ -15,12 +15,14 @@ function Translationrecord1() {
         axios.get(fetchURL + 'api/history')
             .then(response => {
                 console.log("번역기록 GET");
+
                 const responseData = response.data.map((item, index) => ({
                     ...item,
                     id: item.id ?? (index + 1)
                 }));
                 setData(responseData);
                 setTotalPages(Math.ceil(responseData.length / itemsPerPage));
+
             })
             .catch(error => {
                 console.error('Error fetching translation records:', error);
