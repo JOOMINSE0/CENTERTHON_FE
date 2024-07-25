@@ -50,7 +50,8 @@ function Translation() {
             setIsRecording(true);
 
             mediaRecorder.ondataavailable = function (e) {
-                setAudioUrl(e.data);
+                const audioBlob = new Blob([e.data], { type: 'audio/mp3' });
+                setAudioUrl(audioBlob);
                 const fileName = 'recording.mp3';
                 setRecordedFileName(fileName);
                 setInputValue(fileName);
@@ -75,7 +76,8 @@ function Translation() {
 
     const offRecAudio = () => {
         media.ondataavailable = function (e) {
-            setAudioUrl(e.data);
+            const audioBlob = new Blob([e.data], { type: 'audio/mp3' });
+            setAudioUrl(audioBlob);
             const fileName = 'recording.mp3';
             setRecordedFileName(fileName);
             setInputValue(fileName);
@@ -102,13 +104,8 @@ function Translation() {
             console.log('Recorded file:', inputValue);
 
             const formData = new FormData();
-            formData.append('guestbookDto', new Blob([JSON.stringify({
-                guestContent: inputValue,
-                anonymous: true,
-                username: 'guest'
-            })], { type: 'application/json' }));
-            formData.append('file', audioUrl);
-
+            formData.append('file', audioUrl, 'recording.mp3');
+            console.log(audioUrl)
             axios.post(fetchURL + 'api/translate/stt', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
@@ -116,6 +113,7 @@ function Translation() {
             })
                 .then(response => {
                     console.log("파일 번역 성공");
+                    console.log(response.data)
                     setTranslatedText(response.data);
                 })
                 .catch(error => {
@@ -141,6 +139,7 @@ function Translation() {
         setAudioUrl(null);
     };
 
+
     const downloadAudioFile = useCallback(() => {
         if (audioUrl) {
             const url = URL.createObjectURL(audioUrl);
@@ -160,6 +159,10 @@ function Translation() {
         if (audioUrl && inputValue === recordedFileName) {
             downloadAudioFile();
         }
+    };
+
+    const handleKeywordClick = (keyword) => {
+        setInputValue(keyword);
     };
 
     return (
@@ -195,14 +198,11 @@ function Translation() {
                 value={translatedText}
                 readOnly
             ></textarea>
-
-            <div>
-                <div className='recommend-translation-title'>추천 검색어</div>
-                <div className='recommend-translation-container'>
-                    {recommendedKeywords.map((keyword, index) => (
-                        <div key={index}>{keyword}</div>
-                    ))}
-                </div>
+            <div className='recommend-translation-title'>추천 검색어</div>
+            <div className='recommend-translation-container'>
+                {recommendedKeywords.map((keyword, index) => (
+                    <div key={index} onClick={() => handleKeywordClick(keyword)}>{keyword}</div>
+                ))}
             </div>
         </div>
     );
