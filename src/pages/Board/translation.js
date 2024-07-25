@@ -21,7 +21,6 @@ function Translation() {
         axios.get(fetchURL + 'api/recommend')
             .then(response => {
                 console.log("추천 검색어 GET 성공");
-                console.log(response.data);
                 setRecommendedKeywords(response.data);
             })
             .catch(error => {
@@ -100,12 +99,20 @@ function Translation() {
     };
 
     const handleTranslate = () => {
+        if (!inputValue) {
+            alert('문장을 입력하세요.');
+            return;
+        }
+
         if (audioUrl && inputValue === recordedFileName) {
             console.log('Recorded file:', inputValue);
 
             const formData = new FormData();
             formData.append('file', audioUrl, 'recording.mp3');
-            console.log(audioUrl)
+
+            // 파일 정보 출력
+            console.log('Form Data:', formData.get('file'));
+
             axios.post(fetchURL + 'api/translate/stt', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
@@ -113,7 +120,6 @@ function Translation() {
             })
                 .then(response => {
                     console.log("파일 번역 성공");
-                    console.log(response.data)
                     setTranslatedText(response.data);
                 })
                 .catch(error => {
@@ -123,8 +129,6 @@ function Translation() {
             console.log('Text input:', inputValue);
             const encodedInputValue = encodeURIComponent(inputValue);
             const url = `${fetchURL}api/translate?question=${encodedInputValue}`;
-            console.log('Request URL:', url);
-
             axios.post(url)
                 .then(response => {
                     console.log("텍스트 번역 성공");
@@ -138,7 +142,6 @@ function Translation() {
         setInputValue('');
         setAudioUrl(null);
     };
-
 
     const downloadAudioFile = useCallback(() => {
         if (audioUrl) {
@@ -167,37 +170,20 @@ function Translation() {
 
     return (
         <div className='iphone-frameG'>
-            <img className='cancle-button' src='/img/X.png' alt='취소버튼'
-                onClick={() => { navigate('/') }} />
-            <div className='trans-rotate-circle'></div>
-            <img
-                className='mozee-text'
-                src='/img/MoZee_text.png'
-                alt='모지 텍스트'
-                onClick={handleMicClick}
-            />
+            <img className='cancle-button' src='/img/X.png' alt='취소버튼' onClick={() => { navigate('/') }} />
+            <div className='mozee-container'>
+                <div className='trans-rotate-circle'></div>
+                <img className='mozee-text' src='/img/MoZee_text.png' alt='모지 텍스트' onClick={handleMicClick} />
+            </div>
             <p className='trans-description'>번역이 필요한 MZ 언어 · 문장을 입력하세요.</p>
             <div className='trans-search-container'>
-                <input
-                    className='trans-search'
-                    value={inputValue}
-                    onChange={(e) => setInputValue(e.target.value)}
-                />
+                <input className='trans-search' value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
                 <div className='mic-icon-container'>
-                    <img
-                        className='mic-icon'
-                        src='/img/mic-button.png'
-                        alt='마이크 아이콘'
-                        onClick={handleMicClick}
-                    />
+                    <img className='mic-icon' src='/img/mic-button.png' alt='마이크 아이콘' onClick={handleMicClick} />
                 </div>
                 <button className='trans-search-button' onClick={handleTranslateAndDownload}>▶</button>
             </div>
-            <textarea
-                className='trans-input'
-                value={translatedText}
-                readOnly
-            ></textarea>
+            <textarea className='trans-input' value={translatedText} readOnly></textarea>
             <div className='recommend-translation-title'>추천 검색어</div>
             <div className='recommend-translation-container'>
                 {recommendedKeywords.map((keyword, index) => (

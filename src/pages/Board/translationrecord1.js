@@ -6,19 +6,47 @@ import { useNavigate } from 'react-router-dom';
 function Translationrecord1() {
     const navigate = useNavigate();
     const [data, setData] = useState([]);
-    const fetchURL = "https://port-0-centerthon-be-lz124x0vc7996d99.sel4.cloudtype.app/";
+    const [currentPage, setCurrentPage] = useState(1);
+    const [itemsPerPage] = useState(6);
+    const [totalPages, setTotalPages] = useState(0);
+    const fetchURL = "http://ec2-3-34-152-209.ap-northeast-2.compute.amazonaws.com:8080/";
 
     useEffect(() => {
         axios.get(fetchURL + 'api/history')
             .then(response => {
-                console.log("번역기록 GET")
-                console.log(response.data)
+                console.log("번역기록 GET");
                 setData(response.data);
+                setTotalPages(Math.ceil(response.data.length / itemsPerPage));
             })
             .catch(error => {
                 console.error('Error fetching translation records:', error);
             });
-    }, [fetchURL]);
+    }, [fetchURL, itemsPerPage]);
+
+    const handlePageChange = (newPage) => {
+        if (newPage > 0 && newPage <= totalPages) {
+            setCurrentPage(newPage);
+        }
+    };
+
+    const handleRefresh = () => {
+        window.location.reload(); // 페이지 새로고침
+    };
+
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const selectedData = data.slice(startIndex, startIndex + itemsPerPage);
+
+    const getPageNumbers = () => {
+        const startPage = Math.floor((currentPage - 1) / 5) * 5 + 1;
+        return Array.from({ length: Math.min(5, totalPages - startPage + 1) }, (_, index) => startPage + index);
+    };
+
+    const truncateText = (text, maxLength) => {
+        if (text.length > maxLength) {
+            return text.substring(0, maxLength) + '...';
+        }
+        return text;
+    };
 
     return (
         <div className='iphone-frame'>
@@ -42,24 +70,30 @@ function Translationrecord1() {
             </div>
             <div className="subtitle-wrapper">
                 <p className="recommend-subtitle">다른 사용자들의 번역 기록</p>
-                <img className="refreshIcon" src='img/refresh.png' alt='새로고침' />
+                <img className="refreshIcon" src='img/refresh.png' alt='새로고침' onClick={handleRefresh} />
             </div>
             <div className="recommend-container">
-                {data.map((item, index) => (
+                {selectedData.map((item, index) => (
                     <div key={index} className="recommend-flex-container">
                         <div className="bar"></div>
                         <div className="textContainer">
-                            <p className="title">{item.questionHist}</p>
+                            <p className="title">{truncateText(item.questionHist, 17)}</p>
                         </div>
                     </div>
                 ))}
             </div>
             <div className="pagination">
-                <button>&lt;</button>
-                {[1, 2, 3, 4, 5].map((number, index) => (
-                    <div key={index} className={index === 0 ? 'active' : ''}>{number}</div>
+                <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>&lt;</button>
+                {getPageNumbers().map(pageNumber => (
+                    <div
+                        key={pageNumber}
+                        className={pageNumber === currentPage ? 'active' : ''}
+                        onClick={() => handlePageChange(pageNumber)}
+                    >
+                        {pageNumber}
+                    </div>
                 ))}
-                <button>&gt;</button>
+                <button onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages}>&gt;</button>
             </div>
         </div>
     );
