@@ -15,6 +15,7 @@ function Translationrecord1() {
         axios.get(fetchURL + 'api/history')
             .then(response => {
                 console.log("번역기록 GET");
+                console.log(response)
                 setData(response.data);
                 setTotalPages(Math.ceil(response.data.length / itemsPerPage));
             })
