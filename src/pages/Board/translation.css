@@ -18,6 +18,7 @@
     right: 20px;
     width: 12px;
     height: auto;
+    z-index: 1;
 }
 
 .trans-rotate-circle {
@@ -91,7 +92,7 @@
 
 .mic-icon {
     width: 29px;
-    height: 31px;
+    height: auto;
     padding-top: 4px;
     padding-bottom: 2px;
 }
@@ -134,6 +135,7 @@
     border-radius: 20px;
     padding: 4px 13px;
     cursor: pointer;
+    z-index: 1;
 }
 
 .mozee-text {
