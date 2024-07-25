@@ -21,7 +21,8 @@ function Translation() {
         axios.get(fetchURL + 'api/recommend')
             .then(response => {
                 console.log("추천 검색어 GET 성공");
-                setRecommendedKeywords(response.data);
+                const filteredKeywords = response.data.filter(keyword => keyword.length <= 10);
+                setRecommendedKeywords(filteredKeywords);
             })
             .catch(error => {
                 console.error('Error fetching recommended keywords:', error.response || error.message);

@@ -56,7 +56,7 @@
     width: 80px;
     height: auto;
     margin-top: 15px;
-    margin-left: 12px;
+    margin-right: 8px;
 }
 
 .name-image {
@@ -64,7 +64,7 @@
     height: auto;
     position: absolute;
     top: 100px;
-    left: 23px;
+    right: 18px;
 }
 
 .translationRecord-description {
@@ -93,13 +93,14 @@
 .recommend-subtitle {
     color: #fff;
     font-size: 14px;
+    margin-left: 15px;
 }
 
 .refreshIcon {
     width: 16px;
     height: 16px;
     cursor: pointer;
-    margin-right: 50px;
+    margin-right: 60px;
 }
 
 .recommend-container {
@@ -121,11 +122,8 @@
     margin-top: 20px;
     margin-bottom: 30px;
     height: 450px;
-    /* 고정된 높이 설정 */
     justify-content: flex-start;
-    /* Flexbox로 항목을 위쪽에 정렬 */
     gap: 20px;
-    /* 요소 간 간격 설정 */
 }
 
 .recommend-flex-container {
@@ -135,7 +133,6 @@
     padding: 10px;
     width: 329px;
     height: 60px;
-    /* 고정된 높이 설정 */
     box-sizing: border-box;
 }
 

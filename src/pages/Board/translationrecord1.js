@@ -9,12 +9,13 @@ function Translationrecord1() {
     const [currentPage, setCurrentPage] = useState(1);
     const [itemsPerPage] = useState(6);
     const [totalPages, setTotalPages] = useState(0);
-    const fetchURL = "http://ec2-3-34-152-209.ap-northeast-2.compute.amazonaws.com:8080/";
+    const fetchURL = "https://port-0-centerthon-be-lz124x0vc7996d99.sel4.cloudtype.app/";
 
     useEffect(() => {
         axios.get(fetchURL + 'api/history')
             .then(response => {
                 console.log("번역기록 GET");
+                console.log(response)
                 setData(response.data);
                 setTotalPages(Math.ceil(response.data.length / itemsPerPage));
             })
