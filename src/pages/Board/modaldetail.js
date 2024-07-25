@@ -11,7 +11,7 @@ function Modaldetail({ closeModal, item }) {
     useEffect(() => {
         const fetchDetail = async () => {
             try {
-                const response = await axios.get(`http://ec2-3-34-152-209.ap-northeast-2.compute.amazonaws.com:8080/api/info/${item.id}`);
+                const response = await axios.get(`https://port-0-centerthon-be-lz124x0vc7996d99.sel4.cloudtype.app/api/info/${item.id}`);
                 setDetail(response.data);
             } catch (error) {
                 console.error('상세 정보를 가져오는 중 오류가 발생했습니다.', error);

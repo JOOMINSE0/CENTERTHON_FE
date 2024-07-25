@@ -15,8 +15,12 @@ function Translationrecord1() {
         axios.get(fetchURL + 'api/history')
             .then(response => {
                 console.log("번역기록 GET");
-                setData(response.data);
-                setTotalPages(Math.ceil(response.data.length / itemsPerPage));
+                const responseData = response.data.map((item, index) => ({
+                    ...item,
+                    id: item.id ?? (index + 1)
+                }));
+                setData(responseData);
+                setTotalPages(Math.ceil(responseData.length / itemsPerPage));
             })
             .catch(error => {
                 console.error('Error fetching translation records:', error);
@@ -31,6 +35,14 @@ function Translationrecord1() {
 
     const handleRefresh = () => {
         window.location.reload(); // 페이지 새로고침
+    };
+
+    const handleItemClick = (item) => {
+        if (item.id !== undefined) { // Ensure item.id exists
+            navigate(`/translationrecord2/${item.id}`);
+        } else {
+            console.error('Invalid item ID:', item);
+        }
     };
 
     const startIndex = (currentPage - 1) * itemsPerPage;
@@ -74,10 +86,10 @@ function Translationrecord1() {
             </div>
             <div className="recommend-container">
                 {selectedData.map((item, index) => (
-                    <div key={index} className="recommend-flex-container">
+                    <div key={index} className="recommend-flex-container" onClick={() => handleItemClick(item)}>
                         <div className="bar"></div>
                         <div className="textContainer">
-                            <p className="title">{truncateText(item.questionHist, 17)} </p>
+                            <p className="title">{truncateText(item.questionHist, 17)}</p>
                         </div>
                     </div>
                 ))}
