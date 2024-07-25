@@ -110,8 +110,10 @@ function Translation() {
             const formData = new FormData();
             formData.append('file', audioUrl, 'recording.mp3');
 
+
             // 파일 정보 출력
             console.log('Form Data:', formData.get('file'));
+
 
             axios.post(fetchURL + 'api/translate/stt', formData, {
                 headers: {
@@ -120,6 +122,7 @@ function Translation() {
             })
                 .then(response => {
                     console.log("파일 번역 성공");
+                    console.log(response.data)
                     setTranslatedText(response.data);
                 })
                 .catch(error => {
@@ -142,6 +145,7 @@ function Translation() {
         setInputValue('');
         setAudioUrl(null);
     };
+
 
     const downloadAudioFile = useCallback(() => {
         if (audioUrl) {
@@ -183,7 +187,12 @@ function Translation() {
                 </div>
                 <button className='trans-search-button' onClick={handleTranslateAndDownload}>▶</button>
             </div>
-            <textarea className='trans-input' value={translatedText} readOnly></textarea>
+
+            <textarea
+                className='trans-input'
+                value={translatedText}
+                readOnly
+            />
             <div className='recommend-translation-title'>추천 검색어</div>
             <div className='recommend-translation-container'>
                 {recommendedKeywords.map((keyword, index) => (
