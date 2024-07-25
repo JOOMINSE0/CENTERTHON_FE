@@ -1,0 +1,57 @@
+.searchTR{
+    width: 254px;
+    height: 44px;
+    border-radius: 20px 0px  0px 20px;
+    padding-left: 20px;
+    border-style: none;
+}
+
+.checkBtnTR{
+    border-radius: 0px 20px  20px 0px;
+    width: 50px;
+    height: 45px;
+    background-color: #311683;
+    color: #fff;
+    border-style: none;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.containerTR{
+    display: flex;
+    position: absolute;
+    margin-top: -140%;
+}
+
+.question {
+    width: 170px;
+    min-height: 30px;
+    background-color: #fff;
+    border-radius: 40px;
+    margin-right: -25%;
+    margin-top: 10%;
+    padding: 9px;
+    display: inline-block;
+    font-size: 14px;
+    text-align: center;
+}
+
+.answer {
+    width: 253px;
+    min-height: 119px;
+    background-color: #fff;
+    border-radius: 30px;
+    margin-top: 20%;
+    padding: 9px;
+    display: inline-block;
+    font-size: 14px;
+}
+
+
+.MoziS{
+    width: 65px;
+    height: 65px;
+    margin-top: 10%;
+    margin-bottom: -18%;
+    margin-left: -60%;
+}

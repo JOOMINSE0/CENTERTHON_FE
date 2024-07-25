@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './translationRecord.css';
+import './translationrecord1.css';
 import { useNavigate } from 'react-router-dom';
 
-function TranslationRecord() {
+function Translationrecord1() {
     const navigate = useNavigate();
     const [data, setData] = useState([]);
     const fetchURL = "http://ec2-3-34-152-209.ap-northeast-2.compute.amazonaws.com:8080/";
@@ -65,4 +65,4 @@ function TranslationRecord() {
     );
 }
 
-export default TranslationRecord;
+export default Translationrecord1;

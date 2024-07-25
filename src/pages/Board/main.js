@@ -47,7 +47,7 @@ function Main() {
                         <img src='/img/sphere1.png' alt='MZ 언어 게시판' />
                         <span>MZ 언어 게시판</span>
                     </div>
-                    <div className='main-footer-button' onClick={() => { navigate('/translation_record_1') }}>
+                    <div className='main-footer-button' onClick={() => { navigate('/translationrecord_1') }}>
                         <img src='/img/sphere2.png' alt='추천 검색' />
                         <span>번역 기록</span>
                     </div>
