@@ -91,7 +91,7 @@
 
 .mic-icon {
     width: 29px;
-    height: 31px;
+    height: auto;
     padding-top: 4px;
     padding-bottom: 2px;
 }
