@@ -28,8 +28,8 @@ function Modaldetail({ closeModal, item }) {
                 mzLang: detail.word,
                 langDesc: detail.description,
                 example: detail.exsentence,
-                isEdit: true, // 추가된 부분
-                itemId: item.id // 추가된 부분
+                isEdit: true,
+                itemId: item.id 
             }
         });
     };
