@@ -21,7 +21,7 @@ function App() {
         <Route path="/createboard" element={<Createboard />} /> {/* MZ 언어 작성 */}
         <Route path="/modal" element={<Modal />} /> {/* 작성하기 모달창 */}
         <Route path="/modaldetail" element={<Modaldetail />} /> {/* 언어 게시판 상세페이지 모달창 */}
-        <Route path="/translationrecord_2" element={<Translationrecord2 />} /> {/* 번역 기록 2 */}
+        <Route path="/translationrecord2/:id" element={<Translationrecord2 />} />{/* 번역 기록 2 */}
       </Routes>
     </Router>
   );

@@ -24,17 +24,17 @@ function Board() {
     };
 
     const fetchDataBySearch = async (keyword = '') => {
-        const url = `http://ec2-3-34-152-209.ap-northeast-2.compute.amazonaws.com:8080/api/info/search?keyword=${keyword}`;
+        const url = `https://port-0-centerthon-be-lz124x0vc7996d99.sel4.cloudtype.app/api/info/search?keyword=${keyword}`;
         fetchData(url);
     };
 
     const fetchSortedByDate = async () => {
-        const url = 'http://ec2-3-34-152-209.ap-northeast-2.compute.amazonaws.com:8080/api/info/sortedByDate';
+        const url = 'https://port-0-centerthon-be-lz124x0vc7996d99.sel4.cloudtype.app/api/info/sortedByDate';
         fetchData(url);
     };
 
     const fetchSortedByView = async () => {
-        const url = 'http://ec2-3-34-152-209.ap-northeast-2.compute.amazonaws.com:8080/api/info/sortedByView';
+        const url = 'https://port-0-centerthon-be-lz124x0vc7996d99.sel4.cloudtype.app/api/info/sortedByView';
         fetchData(url);
     };
 

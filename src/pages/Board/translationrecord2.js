@@ -1,24 +1,29 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import './translationrecord2.css';
 
 function Translationrecord2() {
     const navigate = useNavigate();
+    const { id } = useParams();
     const [questionHist, setQuestionHist] = useState('');
     const [answerHist, setAnswerHist] = useState('');
 
     useEffect(() => {
-        axios.get('http://ec2-3-34-152-209.ap-northeast-2.compute.amazonaws.com:8080/api/history/1')
-            .then(response => {
-                const { questionHist, answerHist } = response.data;
-                setQuestionHist(questionHist);
-                setAnswerHist(answerHist);
-            })
-            .catch(error => {
-                console.error('API 호출 중 오류 발생:', error);
-            });
-    }, []);
+        if (id) {
+            axios.get(`https://port-0-centerthon-be-lz124x0vc7996d99.sel4.cloudtype.app/api/history/${id}`)
+                .then(response => {
+                    const { questionHist, answerHist } = response.data;
+                    setQuestionHist(questionHist);
+                    setAnswerHist(answerHist);
+                })
+                .catch(error => {
+                    console.error('API 호출 중 오류 발생:', error);
+                });
+        } else {
+            console.error('Invalid ID:', id);
+        }
+    }, [id]);
 
     return (
         <div className='iphone-frame'>
