@@ -40,7 +40,7 @@ function Translationrecord1() {
     };
 
     const handleItemClick = (item) => {
-        if (item.id !== undefined) { // Ensure item.id exists
+        if (item.id !== undefined) {
             navigate(`/translationrecord2/${item.id}`);
         } else {
             console.error('Invalid item ID:', item);
@@ -114,3 +114,4 @@ function Translationrecord1() {
 }
 
 export default Translationrecord1;
+

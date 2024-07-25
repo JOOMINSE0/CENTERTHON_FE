@@ -5,22 +5,9 @@ import axios from 'axios';
 
 function Modaldetail({ closeModal, item }) {
     const navigate = useNavigate();
-    const [detail, setDetail] = useState(null);
+    const [detail, setDetail] = useState(item);
     const [error, setError] = useState(null);
 
-    useEffect(() => {
-        const fetchDetail = async () => {
-            try {
-                const response = await axios.get(`https://port-0-centerthon-be-lz124x0vc7996d99.sel4.cloudtype.app/api/info/${item.id}`);
-                setDetail(response.data);
-            } catch (error) {
-                console.error('상세 정보를 가져오는 중 오류가 발생했습니다.', error);
-                setError('해당 ID의 정보가 없습니다.');
-            }
-        };
-
-        fetchDetail();
-    }, [item.id]);
 
     const handleModifyClick = () => {
         navigate('/createboard', {

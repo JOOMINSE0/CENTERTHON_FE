@@ -7,7 +7,7 @@ import Modaldetail from './modaldetail.js';
 function Board() {
     const navigate = useNavigate();
     const [showModal, setShowModal] = useState(false);
-    const [selectedItem, setSelectedItem] = useState({ id: 0 });
+    const [selectedItem, setSelectedItem] = useState(null);
     const [searchQuery, setSearchQuery] = useState('');
     const [data, setData] = useState([]);
     const [error, setError] = useState(null);
@@ -49,17 +49,19 @@ function Board() {
     useEffect(() => {
         if (searchQuery === '') {
             fetchSortedByDate();
+        } else {
+            fetchDataBySearch(searchQuery);
         }
     }, [searchQuery]);
 
-    const handleFlexContainerClick = (item, index) => {
-        setSelectedItem({ ...item, id: index + 4 });
+    const handleFlexContainerClick = (item) => {
+        setSelectedItem(item);
         setShowModal(true);
     };
 
     const closeModal = () => {
         setShowModal(false);
-        setSelectedItem({ id: 0 });
+        setSelectedItem(null);
     };
 
     const handleSearchChange = (e) => {
@@ -122,11 +124,10 @@ function Board() {
                 <div className="container">
                     {data.map((item, index) => (
                         <div
-                        key={index} 
-                        onClick={() => handleFlexContainerClick(item, index)} 
-                        className="flex-container"
+                            key={index}
+                            onClick={() => handleFlexContainerClick(item)}
+                            className="flex-container"
                         >
-
                             <div className="bar"></div>
                             <div className="textContainer">
                                 <p>{item.word}</p>
