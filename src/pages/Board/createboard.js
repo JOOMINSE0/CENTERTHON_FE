@@ -80,7 +80,7 @@ function Createboard() {
 
     return (
         <div className='iphone-frameG'>
-            <div className="title">작성하기</div>
+            <div className="titleCB">작성하기</div>
 
             <img
                 alt="취소버튼"
@@ -127,7 +127,7 @@ function Createboard() {
 
                 <div>
                     <div className="flexContainerCB">
-                        <p className='fontStyleCB'>예문</p>
+                        <p className='fontStyleMB'>예문</p>
                         {renderCheckIcon(example)}
                     </div>
 
