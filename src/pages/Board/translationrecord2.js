@@ -41,10 +41,10 @@ function Translationrecord2() {
                     readOnly
                 />
                 <button className='checkBtnTR'>
-                    <img style={{ width: "14px" }} src='../../../img/tri.png' />
+                    <img style={{ height:"11px", width:"10px" }} src='../../../img/tri.png' />
                 </button>
             </div>
-            <p style={{ color: "#fff", padding: "30px" }}>
+            <p style={{ color: "#fff", padding: "30px", marginTop:"-30px" }}>
                 ‘{questionHist}’를 검색한 다른 분의 번역 내용이에요.
             </p>
             <div className='question'>
