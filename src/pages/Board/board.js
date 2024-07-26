@@ -77,7 +77,7 @@ function Board() {
 
     return (
         <div className='iphone-frame'>
-            <div className="title">MZ 언어 게시판</div>
+            <div className="title" style={{fontSize:'16px'}}>MZ 언어 게시판</div>
             <img
                 className='backLogo'
                 src='../../../img/backLogo.png'

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
-import './createboard.css';
+import './modifyboard.css';
 import { ReactComponent as CheckG } from '../../pages/svg/checkG.svg';
 import { ReactComponent as CheckP } from '../../pages/svg/checkP.svg';
 
@@ -50,7 +50,7 @@ function Modifyboard() {
 
     return (
         <div className='iphone-frameG'>
-            <div className="title">수정하기</div>
+            <div className="titleMB">수정하기</div>
             <img
                 alt="취소버튼"
                 className='topX'
@@ -59,36 +59,36 @@ function Modifyboard() {
             />
             <div className='locate'>
                 <div>
-                    <div className="flexContainerCB">
-                        <p className='fontStyleCB'>MZ 언어</p>
+                    <div className="flexContainerMB">
+                        <p className='fontStyleMB'>MZ 언어</p>
                         {renderCheckIcon(mzLang)}
                     </div>
                     <input
-                        className='searchCB'
+                        className='searchMB'
                         placeholder='MZ언어를 입력해주세요.'
                         value={mzLang}
                         disabled
                     />
                 </div>
                 <div>
-                    <div className="flexContainerCB">
+                    <div className="flexContainerMB">
                         <p className='fontStyleCB'>언어 설명</p>
                         {renderCheckIcon(langDesc)}
                     </div>
                     <textarea
-                        className='inputCB'
+                        className='inputMB'
                         placeholder='설명을 작성해주세요.'
                         value={langDesc}
                         onChange={handleLangDescChange}
                     />
                 </div>
                 <div>
-                    <div className="flexContainerCB">
+                    <div className="flexContainerMB">
                         <p className='fontStyleCB'>예문</p>
                         {renderCheckIcon(example)}
                     </div>
                     <textarea
-                        className='inputCB'
+                        className='inputMB'
                         placeholder='예문을 작성해주세요.'
                         value={example}
                         onChange={handleExampleChange}
