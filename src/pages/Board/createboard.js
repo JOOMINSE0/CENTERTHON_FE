@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import './createboard.css';
 import { ReactComponent as CheckG } from '../../pages/svg/checkG.svg';
@@ -8,6 +8,7 @@ import Modal from './Modal';
 
 function Createboard() {
     const navigate = useNavigate();
+    const location = useLocation();
     const [mzLang, setMzLang] = useState('');
     const [langDesc, setLangDesc] = useState('');
     const [example, setExample] = useState('');
@@ -15,6 +16,13 @@ function Createboard() {
     const [isDisabled, setIsDisabled] = useState(false);
     const [showModal, setShowModal] = useState(false);
     const [existingWords, setExistingWords] = useState([]);
+
+    useEffect(() => {
+        // location.state에서 existingWords를 가져와 상태를 초기화합니다.
+        if (location.state && location.state.existingWords) {
+            setExistingWords(location.state.existingWords);
+        }
+    }, [location.state]);
 
     const handleMzLangChange = (e) => {
         const newValue = e.target.value;
