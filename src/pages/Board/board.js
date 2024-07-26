@@ -42,7 +42,7 @@ function Board() {
     }, [sortOption]);
 
     const handleFlexContainerClick = (item) => {
-        console.log('Selected Item:', item); // 로그를 추가하여 item 객체를 확인
+        console.log('Selected Item:', item);
         setSelectedItem(item);
         setShowModal(true);
     };
