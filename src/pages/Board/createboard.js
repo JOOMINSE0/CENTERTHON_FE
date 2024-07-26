@@ -18,7 +18,6 @@ function Createboard() {
     const [existingWords, setExistingWords] = useState([]);
 
     useEffect(() => {
-        // location.state에서 existingWords를 가져와 상태를 초기화합니다.
         if (location.state && location.state.existingWords) {
             setExistingWords(location.state.existingWords);
         }
