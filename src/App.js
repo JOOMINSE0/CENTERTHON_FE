@@ -9,6 +9,7 @@ import Translation from "./pages/Board/translation.js";
 import Translationrecord1 from "./pages/Board/translationrecord1.js";
 import Main from "./pages/Board/main.js";
 import Translationrecord2 from "./pages/Board/translationrecord2.js";
+import Modifyboard from "./pages/Board/modifyboard.js";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/translationrecord_1" element={<Translationrecord1 />} /> {/* 번역 기록 1 */}
         <Route path="/board" element={<Board />} /> {/* MZ 언어 게시판 */}
         <Route path="/createboard" element={<Createboard />} /> {/* MZ 언어 작성 */}
+        <Route path="/modifyboard" element={<Modifyboard />} /> {/* MZ 수정 작성 */}
         <Route path="/modal" element={<Modal />} /> {/* 작성하기 모달창 */}
         <Route path="/modaldetail" element={<Modaldetail />} /> {/* 언어 게시판 상세페이지 모달창 */}
         <Route path="/translationrecord2/:id" element={<Translationrecord2 />} />{/* 번역 기록 2 */}

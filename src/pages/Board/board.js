@@ -23,11 +23,6 @@ function Board() {
         }
     };
 
-    const fetchDataBySearch = async (keyword = '') => {
-        const url = `https://port-0-centerthon-be-lz124x0vc7996d99.sel4.cloudtype.app/api/info/search?keyword=${keyword}`;
-        fetchData(url);
-    };
-
     const fetchSortedByDate = async () => {
         const url = 'https://port-0-centerthon-be-lz124x0vc7996d99.sel4.cloudtype.app/api/info/sortedByDate';
         fetchData(url);
@@ -46,15 +41,8 @@ function Board() {
         }
     }, [sortOption]);
 
-    useEffect(() => {
-        if (searchQuery === '') {
-            fetchSortedByDate();
-        } else {
-            fetchDataBySearch(searchQuery);
-        }
-    }, [searchQuery]);
-
     const handleFlexContainerClick = (item) => {
+        console.log('Selected Item:', item); // 로그를 추가하여 item 객체를 확인
         setSelectedItem(item);
         setShowModal(true);
     };
@@ -69,7 +57,12 @@ function Board() {
     };
 
     const handleSearchClick = () => {
-        fetchDataBySearch(searchQuery);
+        if (searchQuery === '') {
+            fetchSortedByDate();
+        } else {
+            const filteredData = data.filter(item => item.word.includes(searchQuery));
+            setData(filteredData);
+        }
     };
 
     const handleSortByDate = () => {

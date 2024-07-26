@@ -7,15 +7,14 @@ function Modaldetail({ closeModal, item }) {
     const navigate = useNavigate();
     const [detail, setDetail] = useState(item);
     const [error, setError] = useState(null);
-
-
+    
     const handleModifyClick = () => {
-        navigate('/createboard', {
+        console.log(item.id); 
+        navigate('/modifyboard', {
             state: {
-                mzLang: detail.word,
-                langDesc: detail.description,
-                example: detail.exsentence,
-                isEdit: true,
+                mzLang: item.word,
+                langDesc: item.description,
+                example: item.exsentence,
                 itemId: item.id 
             }
         });
