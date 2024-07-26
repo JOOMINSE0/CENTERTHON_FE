@@ -44,9 +44,11 @@ function Translationrecord2() {
                     <img style={{ height:"11px", width:"10px" }} src='../../../img/tri.png' />
                 </button>
             </div>
-            <p style={{ color: "#fff", padding: "30px", marginTop:"-30px" }}>
+            <p style={{ color: "#fff", paddingLeft: "30px", paddingRight: "30px",paddingTop:"20px", fontSize:"14px"}}>
                 ‘{questionHist}’를 검색한 다른 분의 번역 내용이에요.
-            </p>
+            </p>                
+
+
             <div className='question'>
                 <p>{questionHist}</p>
             </div>
