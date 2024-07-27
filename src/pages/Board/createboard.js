@@ -25,6 +25,12 @@ function Createboard() {
 
     const handleMzLangChange = (e) => {
         const newValue = e.target.value;
+
+        if (newValue.length > 22) {
+            alert('MZ언어는 22자까지만 입력할 수 있습니다.');
+            return;
+        }
+
         setMzLang(newValue);
 
         if (isDisabled) {
@@ -32,8 +38,27 @@ function Createboard() {
         }
     };
 
-    const handleLangDescChange = (e) => setLangDesc(e.target.value);
-    const handleExampleChange = (e) => setExample(e.target.value);
+    const handleLangDescChange = (e) => {
+        const newValue = e.target.value;
+
+        if (newValue.length > 32) {
+            alert('언어 설명은 32자까지만 입력할 수 있습니다.');
+            return;
+        }
+
+        setLangDesc(newValue);
+    };
+
+    const handleExampleChange = (e) => {
+        const newValue = e.target.value;
+
+        if (newValue.length > 32) {
+            alert('예문은 32자까지만 입력할 수 있습니다.');
+            return;
+        }
+
+        setExample(newValue);
+    };
 
     const handleConfirm = () => {
         if (mzLang.trim() === '') {

@@ -16,11 +16,29 @@ function Modifyboard() {
     useEffect(() => {
         console.log(itemId);
         console.log(location.state);
-
     }, [location.state]);
 
-    const handleLangDescChange = (e) => setLangDesc(e.target.value);
-    const handleExampleChange = (e) => setExample(e.target.value);
+    const handleLangDescChange = (e) => {
+        const newValue = e.target.value;
+
+        if (newValue.length > 32) {
+            alert('언어 설명은 32자까지만 입력할 수 있습니다.');
+            return;
+        }
+
+        setLangDesc(newValue);
+    };
+
+    const handleExampleChange = (e) => {
+        const newValue = e.target.value;
+
+        if (newValue.length > 32) {
+            alert('예문은 32자까지만 입력할 수 있습니다.');
+            return;
+        }
+
+        setExample(newValue);
+    };
 
     const renderCheckIcon = (input) => {
         return input ? <CheckP style={{ marginTop: "5.5%", marginLeft: "10px" }} /> : <CheckG style={{ marginTop: "5.5%", marginLeft: "10px" }} />;
