@@ -9,7 +9,7 @@ function Translationrecord1() {
     const [currentPage, setCurrentPage] = useState(1);
     const [itemsPerPage] = useState(6);
     const [totalPages, setTotalPages] = useState(0);
-    const fetchURL = "https://port-0-centerthon-be-lz124x0vc7996d99.sel4.cloudtype.app/";
+    const fetchURL = "https://port-0-centerthon-be-lz3yvbd8c8a7685f.sel4.cloudtype.app/";
 
     useEffect(() => {
         axios.get(fetchURL + 'api/history')

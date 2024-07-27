@@ -11,7 +11,7 @@ function Translationrecord2() {
 
     useEffect(() => {
         if (id) {
-            axios.get(`https://port-0-centerthon-be-lz124x0vc7996d99.sel4.cloudtype.app/api/history/${id}`)
+            axios.get(`https://port-0-centerthon-be-lz3yvbd8c8a7685f.sel4.cloudtype.app/api/history/${id}`)
                 .then(response => {
                     const { questionHist, answerHist } = response.data;
                     setQuestionHist(questionHist);
