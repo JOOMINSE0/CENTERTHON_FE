@@ -74,7 +74,7 @@ function Modaldetail({ closeModal, item }) {
                 </div>
                 <div className="flex-containerMD">
                     <div className='barW'></div>
-                    <p style={{ paddingLeft: "10px", fontSize: "22px" }}>{detail.word}</p>
+                    <p style={{ paddingLeft: "10px", fontSize: "22px"}}>{detail.word}</p>
                 </div>
                 <p className='textLocateMD'>{detail.description}</p>
                 <div className='horizantalMD-container'>
