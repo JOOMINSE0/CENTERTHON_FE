@@ -69,7 +69,7 @@ function Createboard() {
         };
 
         try {
-            await axios.post('https://port-0-centerthon-be-lz124x0vc7996d99.sel4.cloudtype.app/api/info', requestData);
+            await axios.post('https://port-0-centerthon-be-lz3yvbd8c8a7685f.sel4.cloudtype.app/api/info', requestData);
             alert('단어가 성공적으로 등록되었습니다.');
             navigate('/board');
         } catch (error) {

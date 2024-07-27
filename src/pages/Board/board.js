@@ -24,12 +24,12 @@ function Board() {
     };
 
     const fetchSortedByDate = async () => {
-        const url = 'https://port-0-centerthon-be-lz124x0vc7996d99.sel4.cloudtype.app/api/info/sortedByDate';
+        const url = 'https://port-0-centerthon-be-lz3yvbd8c8a7685f.sel4.cloudtype.app/api/info/sortedByDate';
         fetchData(url);
     };
 
     const fetchSortedByView = async () => {
-        const url = 'https://port-0-centerthon-be-lz124x0vc7996d99.sel4.cloudtype.app/api/info/sortedByView';
+        const url = 'https://port-0-centerthon-be-lz3yvbd8c8a7685f.sel4.cloudtype.app/api/info/sortedByView';
         fetchData(url);
     };
 

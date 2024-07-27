@@ -15,7 +15,7 @@ function Translation() {
     const [analyser, setAnalyser] = useState(null);
     const [audioUrl, setAudioUrl] = useState(null);
     const [recordedFileName, setRecordedFileName] = useState('');
-    const fetchURL = "https://port-0-centerthon-be-lz124x0vc7996d99.sel4.cloudtype.app/";
+    const fetchURL = "https://port-0-centerthon-be-lz3yvbd8c8a7685f.sel4.cloudtype.app/";
 
     useEffect(() => {
         axios.get(fetchURL + 'api/recommend')
