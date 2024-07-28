@@ -73,6 +73,13 @@ function Board() {
         setSortOption('view');
     };
 
+    const truncateText = (text, maxLength) => {
+        if (text.length > maxLength) {
+            return text.substring(0, maxLength) + '...';
+        }
+        return text;
+    };
+
     const existingWords = data.map(item => item.word);
 
     return (
@@ -123,8 +130,8 @@ function Board() {
                         >
                             <div className="bar"></div>
                             <div className="textContainer">
-                                <p>{item.word}</p>
-                                <p style={{ fontSize: "11px", marginTop: "-5px" }}>{item.description[0]}</p>
+                                <p>{truncateText(item.word, 8)}</p>
+                                <p style={{ fontSize: "11px", marginTop: "-5px" }}>{truncateText(item.description[0], 25)}</p>
                             </div>
                         </div>
                     ))}
