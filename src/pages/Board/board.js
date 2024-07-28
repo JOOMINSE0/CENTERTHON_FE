@@ -130,8 +130,8 @@ function Board() {
                         >
                             <div className="bar"></div>
                             <div className="textContainer">
-                                <p>{truncateText(item.word, 22)}</p>
-                                <p style={{ fontSize: "11px", marginTop: "-5px" }}>{item.description[0]}</p>
+                                <p>{truncateText(item.word, 8)}</p>
+                                <p style={{ fontSize: "11px", marginTop: "-5px" }}>{truncateText(item.description[0], 25)}</p>
                             </div>
                         </div>
                     ))}
