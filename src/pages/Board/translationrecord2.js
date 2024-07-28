@@ -21,7 +21,7 @@ function Translationrecord2() {
                     console.error('API 호출 중 오류 발생:', error);
                 });
         } else {
-            console.error('Invalid ID:', id);
+            console.error('ID:', id);
         }
     }, [id]);
 
@@ -41,18 +41,17 @@ function Translationrecord2() {
                     readOnly
                 />
                 <button className='checkBtnTR'>
-                    <img style={{ height:"11px", width:"10px" }} src='../../../img/tri.png' />
+                    <img style={{ height:"11px", width:"10px" }} src='../../../img/tri.png' alt='확인'/>
                 </button>
             </div>
             <p style={{ color: "#fff", paddingLeft: "30px", paddingRight: "30px",paddingTop:"20px", fontSize:"14px"}}>
                 ‘{questionHist}’를 검색한 다른 분의 번역 내용이에요.
             </p>                
 
-
             <div className='question'>
                 <p>{questionHist}</p>
             </div>
-            <img className='MoziS' src='../../../img/MoziS.png' />
+            <img className='MoziS' src='../../../img/MoziS.png' alt='이미지'/>
             <div className='answer'>
                 <p>{answerHist}</p>
             </div>
