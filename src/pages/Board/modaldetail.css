@@ -48,7 +48,7 @@
 }
 
 .barW{
-    width: 8px;
+    width: 4px;
     height: 36px;
     border-radius: 6px;
     background-color: #ffffff;
@@ -63,9 +63,9 @@
 }
 
 .horizantalMD{
-    width: 192px;
+    width: 198px;
     height: 1px;
-    background-color: #fff;
+    background-color: #575757;
     display: flex;
 }
 

@@ -10,7 +10,7 @@ function Main() {
             <img className='logo' src='/img/logo.png' alt='로고' />
 
             <div className='main-content'>
-                <p className='main-title'>모지?!사전</p>
+                <p className='main-title'>모지사전</p>
                 <p className='main-subtitle'>MZ’S LANGUAGE DICTIONARY</p>
                 <div className='bouncing-text'>
                     <span>M</span>
