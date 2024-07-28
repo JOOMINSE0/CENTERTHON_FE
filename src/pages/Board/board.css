@@ -73,15 +73,16 @@
   
   .flex-container {
     height: 93px;
-    width: calc(40% - 0px);
+    width: calc(40% + 3px);
     padding: 10px;
+    margin-left: 4px;
     display: flex;
     justify-content: left;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.07);
     border-radius: 10px;
     cursor: pointer;
-  }
+}
 
 .textContainer {
     display: flex;

@@ -80,7 +80,7 @@ function Modaldetail({ closeModal, item }) {
                 <div className='horizantalMD-container'>
                     <div className='horizantalMD'></div>
                 </div>
-                <p className='textLocateMD'>{detail.exsentence}</p>
+                <p className='textLocateMD'>ex. {detail.exsentence}</p>
             </div>
         </div>
     );
