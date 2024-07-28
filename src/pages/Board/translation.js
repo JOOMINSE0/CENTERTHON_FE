@@ -21,8 +21,9 @@ function Translation() {
         axios.get(fetchURL + 'api/recommend')
             .then(response => {
                 console.log("추천 검색어 GET 성공");
-                const filteredKeywords = response.data.filter(keyword => keyword.length <= 10);
+                const filteredKeywords = response.data.filter(keyword => keyword.length <= 10).slice(0, 6);
                 setRecommendedKeywords(filteredKeywords);
+                console.log(filteredKeywords)
             })
             .catch(error => {
                 console.error('Error fetching recommended keywords:', error.response || error.message);
@@ -111,10 +112,8 @@ function Translation() {
             const formData = new FormData();
             formData.append('file', audioUrl, 'recording.mp3');
 
-
             // 파일 정보 출력
             console.log('Form Data:', formData.get('file'));
-
 
             axios.post(fetchURL + 'api/translate/stt', formData, {
                 headers: {
@@ -146,7 +145,6 @@ function Translation() {
         setInputValue('');
         setAudioUrl(null);
     };
-
 
     const downloadAudioFile = useCallback(() => {
         if (audioUrl) {
@@ -182,11 +180,23 @@ function Translation() {
             </div>
             <p className='trans-description'>번역이 필요한 MZ 언어 · 문장을 입력하세요.</p>
             <div className='trans-search-container'>
-                <input className='trans-search' value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
+                <input
+                    className='trans-search'
+                    value={inputValue}
+                    onChange={(e) => setInputValue(e.target.value)}
+                    maxLength={14}
+                />
+
                 <div className='mic-icon-container'>
                     <img className='mic-icon' src='/img/mic-button.png' alt='마이크 아이콘' onClick={handleMicClick} />
                 </div>
-                <button className='trans-search-button' onClick={handleTranslateAndDownload}>▶</button>
+                <button
+                    className='trans-search-button'
+                    onClick={handleTranslateAndDownload}
+                    disabled={!inputValue}
+                >
+                    ▶
+                </button>
             </div>
 
             <textarea
@@ -196,7 +206,7 @@ function Translation() {
             />
             <div className='recommend-translation-title'>추천 검색어</div>
             <div className='recommend-translation-container'>
-                {recommendedKeywords.map((keyword, index) => (
+                {recommendedKeywords.slice(0, 6).map((keyword, index) => (
                     <div key={index} onClick={() => handleKeywordClick(keyword)}>{keyword}</div>
                 ))}
             </div>
