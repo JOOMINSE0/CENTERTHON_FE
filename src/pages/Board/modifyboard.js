@@ -50,7 +50,13 @@ function Modifyboard() {
             description: [langDesc.trim()],
             exsentence: example.split('\n').map(line => line.trim())
         };
+        
 
+    if (langDesc.trim() === '' || example.trim() === '') {
+        alert('모든 필드를 채워주세요');
+        return;
+    }
+    
         try {
             if (itemId) {
                 await axios.put(`https://port-0-centerthon-be-lz3yvbd8c8a7685f.sel4.cloudtype.app/api/info/${itemId}`, requestData);
