@@ -26,10 +26,10 @@
 .question {
     width: 100px;
     min-height: 30px;
-    max-width: 130px;
+    max-width: 150px;
     background-color: #fff;
-    border-radius: 40px;
-    margin-right: -25%;
+    border-radius: 30px;
+    margin-right: -30%;
     margin-top: 10%;
     padding: 9px;
     display: inline-block;
