@@ -21,7 +21,7 @@ function Translation() {
         axios.get(fetchURL + 'api/recommend')
             .then(response => {
                 console.log("추천 검색어 GET 성공");
-                const filteredKeywords = response.data.filter(keyword => keyword.length <= 10).slice(0, 6);
+                const filteredKeywords = response.data;
                 setRecommendedKeywords(filteredKeywords);
                 console.log(filteredKeywords)
             })
@@ -206,7 +206,7 @@ function Translation() {
             />
             <div className='recommend-translation-title'>추천 검색어</div>
             <div className='recommend-translation-container'>
-                {recommendedKeywords.slice(0, 6).map((keyword, index) => (
+                {recommendedKeywords.map((keyword, index) => (
                     <div key={index} onClick={() => handleKeywordClick(keyword)}>{keyword}</div>
                 ))}
             </div>
