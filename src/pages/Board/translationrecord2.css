@@ -24,8 +24,9 @@
 }
 
 .question {
-    width: 150px;
+    width: 100px;
     min-height: 30px;
+    max-width: 130px;
     background-color: #fff;
     border-radius: 40px;
     margin-right: -25%;
@@ -34,7 +35,10 @@
     display: inline-block;
     font-size: 14px;
     text-align: center;
+    white-space: normal;   
+    word-wrap: break-word; 
 }
+
 
 .answer {
     width: 253px;

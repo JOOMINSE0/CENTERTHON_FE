@@ -32,7 +32,7 @@ function Translationrecord2() {
                 className='backLogo'
                 src='../../../img/backLogo.png'
                 alt='뒤로가기'
-                onClick={() => navigate(-1)}
+                onClick={() => navigate('/')}
             />
             <div className='containerTR'>
                 <input
@@ -45,7 +45,7 @@ function Translationrecord2() {
                 </button>
             </div>
             <p style={{ color: "#fff", paddingLeft: "30px", paddingRight: "30px", fontSize: "14px", marginTop: "-108%", position: "absolute" }}>
-                ‘{questionHist}’를 검색한 다른 분의 번역 내용이에요.
+                ‘{questionHist}’을/를 검색한 다른 분의 번역 내용이에요.
             </p>
 
             <div className='scroll'>
