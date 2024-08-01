@@ -104,18 +104,18 @@ function Board() {
                 onClick={handleSearchClick}
             />
             <div className='container1' style={{ color: "#fff" }}>
+                 <p 
+                    className={`sort-option ${sortOption === 'date' ? 'active' : ''}`} 
+                    onClick={handleSortByDate}
+                >
+                    최신순
+                </p>
+                <p>ㅣ</p>
                 <p 
                     className={`sort-option ${sortOption === 'view' ? 'active' : ''}`} 
                     onClick={handleSortByView}
                 >
                     조회순
-                </p>
-                <p>ㅣ</p>
-                <p 
-                    className={`sort-option ${sortOption === 'date' ? 'active' : ''}`} 
-                    onClick={handleSortByDate}
-                >
-                    최신순
                 </p>
             </div>
 

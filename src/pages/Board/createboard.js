@@ -62,6 +62,7 @@ function Createboard() {
 
     const handleConfirm = () => {
         if (mzLang.trim() === '') {
+            alert('모든 필드를 채워주세요');
             return;
         }
 
@@ -84,6 +85,12 @@ function Createboard() {
 
     const handleSubmit = async () => {
         if (!isConfirmed || isDisabled) {
+            alert('모든 필드를 채워주세요');
+            return;
+        }
+
+        if (langDesc.trim() === '' || example.trim() === '') {
+            alert('모든 필드를 채워주세요');
             return;
         }
 

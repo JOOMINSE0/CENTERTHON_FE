@@ -21,8 +21,8 @@ function Modifyboard() {
     const handleLangDescChange = (e) => {
         const newValue = e.target.value;
 
-        if (newValue.length > 32) {
-            alert('언어 설명은 32자까지만 입력할 수 있습니다.');
+        if (newValue.length > 40) {
+            alert('언어 설명은 40자까지만 입력할 수 있습니다.');
             return;
         }
 
@@ -32,8 +32,8 @@ function Modifyboard() {
     const handleExampleChange = (e) => {
         const newValue = e.target.value;
 
-        if (newValue.length > 32) {
-            alert('예문은 32자까지만 입력할 수 있습니다.');
+        if (newValue.length > 40) {
+            alert('예문은 40자까지만 입력할 수 있습니다.');
             return;
         }
 
@@ -50,7 +50,13 @@ function Modifyboard() {
             description: [langDesc.trim()],
             exsentence: example.split('\n').map(line => line.trim())
         };
+        
 
+    if (langDesc.trim() === '' || example.trim() === '') {
+        alert('모든 필드를 채워주세요');
+        return;
+    }
+    
         try {
             if (itemId) {
                 await axios.put(`https://port-0-centerthon-be-lz3yvbd8c8a7685f.sel4.cloudtype.app/api/info/${itemId}`, requestData);

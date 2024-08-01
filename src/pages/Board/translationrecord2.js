@@ -44,9 +44,11 @@ function Translationrecord2() {
                     <img style={{ height:"11px", width:"10px" }} src='../../../img/tri.png' alt='확인'/>
                 </button>
             </div>
-            <p style={{ color: "#fff", paddingLeft: "30px", paddingRight: "30px",paddingTop:"20px", fontSize:"14px"}}>
+            <p style={{ color: "#fff", paddingLeft: "30px", paddingRight: "30px", fontSize:"14px", marginTop:"-108%", position:"absolute"}}>
                 ‘{questionHist}’를 검색한 다른 분의 번역 내용이에요.
             </p>                
+
+            <div className='scroll'>
 
             <div className='question'>
                 <p>{questionHist}</p>
@@ -55,6 +57,9 @@ function Translationrecord2() {
             <div className='answer'>
                 <p>{answerHist}</p>
             </div>
+
+            </div>
+
         </div>
     );
 }
