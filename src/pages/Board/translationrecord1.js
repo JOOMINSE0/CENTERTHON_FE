@@ -9,24 +9,31 @@ function Translationrecord1() {
     const [currentPage, setCurrentPage] = useState(1);
     const [itemsPerPage] = useState(6);
     const [totalPages, setTotalPages] = useState(0);
+    const [detailedData, setDetailedData] = useState({});
     const fetchURL = "https://port-0-centerthon-be-lz3yvbd8c8a7685f.sel4.cloudtype.app/";
 
     useEffect(() => {
-        axios.get(fetchURL + 'api/history')
-            .then(response => {
-                console.log("번역기록 GET");
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(fetchURL + 'api/history');
+                const data = response.data;
+                setData(data);
+                setTotalPages(Math.ceil(data.length / itemsPerPage));
 
-                const responseData = response.data.map((item, index) => ({
-                    ...item,
-                    id: item.id ?? (index + 1)
-                }));
-                setData(responseData);
-                setTotalPages(Math.ceil(responseData.length / itemsPerPage));
+                const details = {};
+                const detailPromises = data.map(async (item) => {
+                    const detailResponse = await axios.get(fetchURL + `api/history/${item.id}`);
+                    details[item.id] = detailResponse.data;
+                });
 
-            })
-            .catch(error => {
+                await Promise.all(detailPromises);
+                setDetailedData(details);
+            } catch (error) {
                 console.error('Error fetching translation records:', error);
-            });
+            }
+        };
+
+        fetchData();
     }, [fetchURL, itemsPerPage]);
 
     const handlePageChange = (newPage) => {
@@ -37,14 +44,6 @@ function Translationrecord1() {
 
     const handleRefresh = () => {
         window.location.reload(); // 페이지 새로고침
-    };
-
-    const handleItemClick = (item) => {
-        if (item.id !== undefined) {
-            navigate(`/translationrecord2/${item.id}`);
-        } else {
-            console.error('Invalid item ID:', item);
-        }
     };
 
     const startIndex = (currentPage - 1) * itemsPerPage;
@@ -69,12 +68,12 @@ function Translationrecord1() {
                 className='backLogo'
                 src='../../../img/backLogo.png'
                 alt='뒤로가기'
-                onClick={() => navigate('/')}
+                onClick={() => navigate(-1)}
             />
             <div className="content-wrapper">
                 <div className="character-section">
                     <img className='character-image' src='img/sphere.png' alt='모지캐릭터' />
-                    <img className='name-image' src='img/mozee_name.png' alt='모지캐릭터' />
+                    <img className='name-image' src='img/mozee_name.png' alt='모지이름' />
                 </div>
                 <div className='translationRecord-description'>
                     이곳은 제가 번역했던 MZ 언어 및 문장을<br />
@@ -88,10 +87,11 @@ function Translationrecord1() {
             </div>
             <div className="recommend-container">
                 {selectedData.map((item, index) => (
-                    <div key={index} className="recommend-flex-container" onClick={() => handleItemClick(item)}>
+                    <div key={index} className="recommend-flex-container" onClick={() => navigate(`/translationrecord2/${item.id}`)}>
                         <div className="bar"></div>
                         <div className="textContainer">
-                            <p className="title">{truncateText(item.questionHist, 17)}</p>
+                            <p className="title">{truncateText(item.questionHist, 17)} </p>
+                            <p className='sub'>{truncateText(detailedData[item.id]?.answerHist || '', 29)}</p>
                         </div>
                     </div>
                 ))}
@@ -114,4 +114,3 @@ function Translationrecord1() {
 }
 
 export default Translationrecord1;
-

@@ -146,26 +146,7 @@ function Translation() {
         setAudioUrl(null);
     };
 
-    const downloadAudioFile = useCallback(() => {
-        if (audioUrl) {
-            const url = URL.createObjectURL(audioUrl);
-            const a = document.createElement('a');
-            document.body.appendChild(a);
-            a.style.display = 'none';
-            a.href = url;
-            a.download = 'recording.mp3';
-            a.click();
-            window.URL.revokeObjectURL(url);
-            setInputValue('');
-        }
-    }, [audioUrl]);
 
-    const handleTranslateAndDownload = () => {
-        handleTranslate();
-        if (audioUrl && inputValue === recordedFileName) {
-            downloadAudioFile();
-        }
-    };
 
     const handleKeywordClick = (keyword) => {
         setInputValue(keyword);
@@ -192,7 +173,7 @@ function Translation() {
                 </div>
                 <button
                     className='trans-search-button'
-                    onClick={handleTranslateAndDownload}
+                    onClick={handleTranslate}
                     disabled={!inputValue}
                 >
                     ▶
