@@ -50,7 +50,7 @@
 
   .bar{
     width: 8px;
-    height: 89px;
+    height: 83px;
     border-radius: 6px;
     background-color: #311683;
     flex-shrink: 0;
@@ -72,10 +72,10 @@
   }
   
   .flex-container {
-    height: 93px;
-    width: calc(39% + 2px);
+    height: 83px;
+    width: calc(35% + 5px);
     padding: 10px;
-    margin-left: 13px;
+    margin-left: 29px;
     display: flex;
     justify-content: left;
     align-items: center;
