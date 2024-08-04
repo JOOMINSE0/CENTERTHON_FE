@@ -32,7 +32,7 @@ function Translationrecord2() {
                 className='backLogo'
                 src='../../../img/backLogo.png'
                 alt='뒤로가기'
-                onClick={() => navigate('/')}
+                onClick={() => navigate('/translationrecord_1')}
             />
             <div className='containerTR'>
                 <input

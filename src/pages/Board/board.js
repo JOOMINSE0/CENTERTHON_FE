@@ -84,12 +84,12 @@ function Board() {
 
     return (
         <div className='iphone-frame'>
-            <div className="title" style={{fontSize:'16px'}}>MZ 언어 게시판</div>
+            <div className="title" style={{ fontSize: '16px' }}>MZ 언어 게시판</div>
             <img
                 className='backLogo'
                 src='../../../img/backLogo.png'
                 alt='뒤로가기'
-                onClick={() => navigate(-1)}
+                onClick={() => navigate("/")}
             />
             <input
                 className='search'
@@ -104,15 +104,15 @@ function Board() {
                 onClick={handleSearchClick}
             />
             <div className='container1' style={{ color: "#fff" }}>
-                 <p 
-                    className={`sort-option ${sortOption === 'date' ? 'active' : ''}`} 
+                <p
+                    className={`sort-option ${sortOption === 'date' ? 'active' : ''}`}
                     onClick={handleSortByDate}
                 >
                     최신순
                 </p>
                 <p>ㅣ</p>
-                <p 
-                    className={`sort-option ${sortOption === 'view' ? 'active' : ''}`} 
+                <p
+                    className={`sort-option ${sortOption === 'view' ? 'active' : ''}`}
                     onClick={handleSortByView}
                 >
                     조회순

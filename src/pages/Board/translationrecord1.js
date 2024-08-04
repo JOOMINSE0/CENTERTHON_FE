@@ -68,7 +68,7 @@ function Translationrecord1() {
                 className='backLogo'
                 src='../../../img/backLogo.png'
                 alt='뒤로가기'
-                onClick={() => navigate(-1)}
+                onClick={() => navigate("/")}
             />
             <div className="content-wrapper">
                 <div className="character-section">
