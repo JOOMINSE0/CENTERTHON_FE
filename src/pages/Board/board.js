@@ -43,7 +43,7 @@ function Board() {
 
     const handleFlexContainerClick = (item) => {
         console.log('Selected Item:', item);
-        setSelectedItem(item);
+        setSelectedItem({ ...item, sortOption });
         setShowModal(true);
     };
 

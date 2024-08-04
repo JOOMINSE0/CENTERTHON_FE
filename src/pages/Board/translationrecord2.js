@@ -25,6 +25,13 @@ function Translationrecord2() {
         }
     }, [id]);
 
+    const truncateText = (text, maxLength) => {
+        if (text.length > maxLength) {
+            return text.substring(0, maxLength) + '...';
+        }
+        return text;
+    };
+
     return (
         <div className='iphone-frame'>
             <div className="title">번역 기록</div>
@@ -44,9 +51,12 @@ function Translationrecord2() {
                     <img style={{ height: "11px", width: "10px" }} src='../../../img/tri.png' alt='확인' />
                 </button>
             </div>
-            <p style={{ color: "#fff", paddingLeft: "30px", paddingRight: "30px", fontSize: "14px", marginTop: "-108%", position: "absolute" }}>
-                ‘{questionHist}’을/를 검색한 다른 분의 번역 내용이에요.
-            </p>
+
+            <p style={{ color: "#fff", paddingLeft: "30px", paddingRight: "30px", fontSize:"14px", marginTop:"-108%", position:"absolute", textAlign:"center"}}>
+                ‘{truncateText(questionHist, 7)}’을/를 검색한 다른 분의 번역 내용이에요.
+                
+            </p>                
+
 
             <div className='scroll'>
                 <div className='question'>
