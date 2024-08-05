@@ -40,6 +40,7 @@
     word-wrap: break-word; 
     overflow: hidden;      
     box-sizing: border-box;
+    font-family: 'Pretendard', sans-serif;
 }
 
 
@@ -53,6 +54,7 @@
     padding: 9px;
     display: inline-block;
     font-size: 14px;
+    font-family: 'Pretendard', sans-serif;
 }
 
 

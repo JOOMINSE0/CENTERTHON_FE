@@ -12,15 +12,18 @@
 }
 
 
-.modalMD{
+.modalMD {
     width: 279px;
-    height: 305px;
+    min-height: 305px;
     border-radius: 50px;
     text-align: left;
     background: linear-gradient(to bottom, #2A2566, #04010D);
     color: #fff;
     position: absolute;
+    padding: 5px; 
+    box-sizing: border-box;
 }
+
 
 .textLocateMD{
     padding-left: 40px;
