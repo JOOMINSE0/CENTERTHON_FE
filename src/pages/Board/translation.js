@@ -6,7 +6,7 @@ import './translation.css';
 function Translation() {
     const navigate = useNavigate();
     const [inputValue, setInputValue] = useState('');
-    const [translatedText, setTranslatedText] = useState('');
+    const [translatedText, setTranslatedText] = useState({ text: '', isSpecial: false });
     const [recommendedKeywords, setRecommendedKeywords] = useState([]);
     const [stream, setStream] = useState(null);
     const [media, setMedia] = useState(null);
@@ -20,10 +20,8 @@ function Translation() {
     useEffect(() => {
         axios.get(fetchURL + 'api/recommend')
             .then(response => {
-                console.log("추천 검색어 GET 성공");
                 const filteredKeywords = response.data;
                 setRecommendedKeywords(filteredKeywords);
-                console.log(filteredKeywords)
             })
             .catch(error => {
                 console.error('Error fetching recommended keywords:', error.response || error.message);
@@ -106,14 +104,13 @@ function Translation() {
             return;
         }
 
+        setTranslatedText({ text: "모지가 열심히 번역 중이에요...", isSpecial: true });
+
         if (audioUrl && inputValue === recordedFileName) {
             console.log('Recorded file:', inputValue);
 
             const formData = new FormData();
             formData.append('file', audioUrl, 'recording.mp3');
-
-            // 파일 정보 출력
-            console.log('Form Data:', formData.get('file'));
 
             axios.post(fetchURL + 'api/translate/stt', formData, {
                 headers: {
@@ -122,11 +119,11 @@ function Translation() {
             })
                 .then(response => {
                     console.log("파일 번역 성공");
-                    console.log(response.data)
-                    setTranslatedText(response.data);
+                    setTranslatedText({ text: response.data, isSpecial: false });
                 })
                 .catch(error => {
                     console.error('Error uploading file:', error.response || error.message);
+                    setTranslatedText({ text: "Error translating audio.", isSpecial: true });
                 });
         } else {
             console.log('Text input:', inputValue);
@@ -135,18 +132,17 @@ function Translation() {
             axios.post(url)
                 .then(response => {
                     console.log("텍스트 번역 성공");
-                    setTranslatedText(response.data);
+                    setTranslatedText({ text: response.data, isSpecial: false });
                 })
                 .catch(error => {
                     console.error('Error translating text:', error.response || error.message);
+                    setTranslatedText({ text: "Error translating text.", isSpecial: true });
                 });
         }
 
         setInputValue('');
         setAudioUrl(null);
     };
-
-
 
     const handleKeywordClick = (keyword) => {
         setInputValue(keyword);
@@ -181,8 +177,8 @@ function Translation() {
             </div>
 
             <textarea
-                className='trans-input'
-                value={translatedText}
+                className={`trans-input ${translatedText.isSpecial ? 'special-text' : ''}`}
+                value={translatedText.text}
                 readOnly
             />
             <div className='recommend-translation-title'>추천 검색어</div>
