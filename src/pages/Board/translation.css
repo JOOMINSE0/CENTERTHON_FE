@@ -154,3 +154,19 @@
     width: 100%;
     height: 30%;
 }
+
+.special-text {
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+    font-family: 'PureMechanic', sans-serif;
+    font-weight: 700;
+    top: 30px;
+}
+
+@font-face {
+    font-family: 'PureMechanic';
+    src: url('/public/fonts/PureMechanic.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
