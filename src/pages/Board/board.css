@@ -18,7 +18,7 @@
     margin-top: -186%;
     font-weight: bolder;
     font-size: 16px;
-
+    font-family: 'Pretendard', sans-serif;
   }
 
   .backLogo{
@@ -91,6 +91,8 @@
   margin-left: -3px;
 }
 
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
 .textContainer {
     display: flex;
     flex-direction: column; 
@@ -98,7 +100,9 @@
     margin-left: 10px;
     color: #fff;
     padding-left: 10px;
+    font-family: 'Pretendard', sans-serif;
 }
+
 
 .writeBtn{
   width: 69px;
@@ -131,14 +135,14 @@
 
 .sort-option {
   cursor: pointer;
-  color: #fff; 
+  color: #a3a3a3; 
   transition: color 0.3s;
 }
 
 .sort-option.active {
-  color: #a3a3a3;
+  color: #ffffff;
 }
 
 .sort-option:hover {
-  color: #a3a3a3;
+  color: #ffffff;
 }
