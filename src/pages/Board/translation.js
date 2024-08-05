@@ -165,7 +165,7 @@ function Translation() {
                     className='trans-search'
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}
-                    maxLength={14}
+                    maxLength={40}
                 />
 
                 <div className='mic-icon-container'>
