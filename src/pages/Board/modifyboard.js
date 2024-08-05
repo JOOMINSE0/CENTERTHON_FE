@@ -21,8 +21,8 @@ function Modifyboard() {
     const handleLangDescChange = (e) => {
         const newValue = e.target.value;
 
-        if (newValue.length > 40) {
-            alert('언어 설명은 40자까지만 입력할 수 있습니다.');
+        if (newValue.length > 60) {
+            alert('언어 설명은 60자까지만 입력할 수 있습니다.');
             return;
         }
 
@@ -32,8 +32,8 @@ function Modifyboard() {
     const handleExampleChange = (e) => {
         const newValue = e.target.value;
 
-        if (newValue.length > 40) {
-            alert('예문은 40자까지만 입력할 수 있습니다.');
+        if (newValue.length > 60) {
+            alert('예문은 60자까지만 입력할 수 있습니다.');
             return;
         }
 
