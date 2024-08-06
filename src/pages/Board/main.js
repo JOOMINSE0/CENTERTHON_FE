@@ -40,7 +40,9 @@ function Main() {
 
                 <button className='main-translate-button' onClick={() => { navigate('/translation') }}>
                     MZ 언어 번역하기
-                    <span style={{ marginLeft: "12px" }}>►</span>
+                    <span style={{ marginLeft: "12px" }}>
+                        <img src='/img/next.png' alt='다음' />
+                    </span>
                 </button>
                 <div className='main-footer-buttons'>
                     <div className='main-footer-button' onClick={() => { navigate('/board') }}>
