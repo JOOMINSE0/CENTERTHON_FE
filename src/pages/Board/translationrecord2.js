@@ -50,7 +50,7 @@ function Translationrecord2() {
                     readOnly
                 />
                 <button className='checkBtnTR'>
-                    <img style={{ height: "11px", width: "10px" }} src='../../../img/tri.png' alt='확인' />
+                ▶
                 </button>
             </div>
 
