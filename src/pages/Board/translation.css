@@ -13,11 +13,12 @@
 
 .cancle-button {
     position: absolute;
-    top: 30px;
-    right: 20px;
+    top: 40px;
+    right: 35px;
     width: 12px;
     height: auto;
     z-index: 1;
+    cursor: pointer;
 }
 
 .trans-rotate-circle {
