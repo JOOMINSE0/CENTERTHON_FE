@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import './translationrecord2.css';
 
 function Translationrecord2() {
     const navigate = useNavigate();
     const { id } = useParams();
+    const location = useLocation();
     const [questionHist, setQuestionHist] = useState('');
     const [answerHist, setAnswerHist] = useState('');
+    const currentPage = location.state?.currentPage || 1;
 
     useEffect(() => {
         if (id) {
@@ -39,7 +41,7 @@ function Translationrecord2() {
                 className='backLogo'
                 src='../../../img/backLogo.png'
                 alt='뒤로가기'
-                onClick={() => navigate('/translationrecord_1')}
+                onClick={() => navigate(`/translationrecord_1?page=${currentPage}`)} // currentPage로 돌아가기
             />
             <div className='containerTR'>
                 <input
@@ -54,9 +56,7 @@ function Translationrecord2() {
 
             <p style={{ color: "#fff", paddingLeft: "30px", paddingRight: "30px", fontSize:"14px", marginTop:"-108%", position:"absolute", textAlign:"center"}}>
                 ‘{truncateText(questionHist, 7)}’을/를 검색한 다른 분의 번역 내용이에요.
-                
             </p>                
-
 
             <div className='scroll'>
                 <div className='question'>

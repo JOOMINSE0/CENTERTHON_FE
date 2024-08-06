@@ -23,6 +23,7 @@
     margin-top: -140%;
 }
 
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 .question {
     min-width: 100px;      
     max-width: 150px;       
