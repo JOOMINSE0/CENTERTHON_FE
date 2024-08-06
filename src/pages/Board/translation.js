@@ -165,7 +165,7 @@ function Translation() {
                 />
 
                 <div className='mic-icon-container'>
-                    <img className='mic-icon' src='/img/mic-button.png' alt='마이크 아이콘' onClick={handleMicClick} />
+                    <img className='mic-icon' src='/img/mic-icon.png' alt='마이크 아이콘' onClick={handleMicClick} />
                 </div>
                 <button
                     className='trans-search-button'
