@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './translationrecord1.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 function Translationrecord1() {
     const navigate = useNavigate();
+    const location = useLocation();
+    const queryParams = new URLSearchParams(location.search);
+    const initialPage = parseInt(queryParams.get('page')) || 1;
+
     const [data, setData] = useState([]);
-    const [currentPage, setCurrentPage] = useState(1);
+    const [currentPage, setCurrentPage] = useState(initialPage);
     const [itemsPerPage] = useState(6);
     const [totalPages, setTotalPages] = useState(0);
     const [detailedData, setDetailedData] = useState({});
@@ -39,6 +43,7 @@ function Translationrecord1() {
     const handlePageChange = (newPage) => {
         if (newPage > 0 && newPage <= totalPages) {
             setCurrentPage(newPage);
+            navigate(`/translationrecord_1?page=${newPage}`);
         }
     };
 
@@ -87,7 +92,7 @@ function Translationrecord1() {
             </div>
             <div className="recommend-container">
                 {selectedData.map((item, index) => (
-                    <div key={index} className="recommend-flex-container" onClick={() => navigate(`/translationrecord2/${item.id}`)}>
+                    <div key={index} className="recommend-flex-container" onClick={() => navigate(`/translationrecord2/${item.id}`, { state: { currentPage } })}>
                         <div className="bar"></div>
                         <div className="textContainer">
                             <p className="title">{truncateText(item.questionHist, 17)} </p>

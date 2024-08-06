@@ -23,6 +23,7 @@
     margin-top: -140%;
 }
 
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 .question {
     min-width: 100px;      
     max-width: 150px;       
@@ -40,6 +41,7 @@
     word-wrap: break-word; 
     overflow: hidden;      
     box-sizing: border-box;
+    font-family: 'Pretendard', sans-serif;
 }
 
 
@@ -53,6 +55,7 @@
     padding: 9px;
     display: inline-block;
     font-size: 14px;
+    font-family: 'Pretendard', sans-serif;
 }
 
 
