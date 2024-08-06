@@ -172,7 +172,7 @@ function Translation() {
                     onClick={handleTranslate}
                     disabled={!inputValue}
                 >
-                    <img src='/img/next.png' alt='다음' />
+                    <img src='/img/next.png' alt='다음' className='next' />
 
                 </button>
             </div>
