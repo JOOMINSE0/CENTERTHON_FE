@@ -11,21 +11,21 @@ function Main() {
             <div className='main-content'>
                 <p className='main-title'>모지사전</p>
                 <p className='main-subtitle'>MZ’S LANGUAGE DICTIONARY</p>
-                <div className='bouncing-text'>
+                <div className='bouncing-text' style={{ marginTop: "10px", color: "#311683" }}>
                     <span>M</span>
                     <span>O</span>
                     <span>Z</span>
                     <span>E</span>
                     <span>E</span>
                 </div>
-                <div className='bouncing-text' style={{ marginTop: "90px" }}>
+                <div className='bouncing-text' style={{ marginTop: "90px", color: "#311683", opacity: 0.5 }}>
                     <span>M</span>
                     <span>O</span>
                     <span>Z</span>
                     <span>E</span>
                     <span>E</span>
                 </div>
-                <div className='bouncing-text' style={{ marginTop: "180px" }}>
+                <div className='bouncing-text' style={{ marginTop: "180px", color: "#311683" }}>
                     <span>M</span>
                     <span>O</span>
                     <span>Z</span>
@@ -34,9 +34,10 @@ function Main() {
                 </div>
                 <div className='main-rotate-circle'></div>
                 <p className='main-description'>
-                    MZ와의 대화가 어려우셨나요?<br />
+                    <p>MZ와의 대화가 어려우셨나요?<br /></p>
                     이해하기 어려웠던 MZ 언어를 검색해보세요.
                 </p>
+
                 <button className='main-translate-button' onClick={() => { navigate('/translation') }}>
                     MZ 언어 번역하기
                     <span style={{ marginLeft: "12px" }}>►</span>
@@ -54,6 +55,7 @@ function Main() {
             </div>
             <div className='main-footer'>
                 <p style={{marginBottom:"2px"}}>서울여자대학교 멋쟁이사자처럼 12TH</p>
+
                 <a href="https://www.instagram.com/likelion_swu/">
                     <img style={{width:"15px"}} src='/img/insta.png' alt='인스타그램' />
                 </a>
