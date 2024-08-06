@@ -56,11 +56,12 @@ function Main() {
                 </div>
             </div>
             <div className='main-footer'>
-                <p style={{ marginTop: "50px" }}>서울여자대학교 멋쟁이사자처럼 12TH</p>
+                <p style={{marginBottom:"2px"}}>서울여자대학교 멋쟁이사자처럼 12TH</p>
+
                 <a href="https://www.instagram.com/likelion_swu/">
-                    <img src='/img/insta.png' alt='인스타그램' />
+                    <img style={{width:"15px"}} src='/img/insta.png' alt='인스타그램' />
                 </a>
-                <p>Copyright © 2024 likelion_swu. All rights reserved.</p>
+                <p style={{marginTop:"-1px"}}>Copyright © 2024 likelion_swu. All rights reserved.</p>
             </div>
         </div>
     );

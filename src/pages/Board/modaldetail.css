@@ -45,7 +45,7 @@
 
 .XMD{
     width: 12px;
-    height: 12px;
+    height: 13px;
     cursor: pointer;
     margin-left: 20px;
 }
@@ -67,9 +67,11 @@
 
 .horizantalMD{
     width: 198px;
-    height: 1px;
+    height: 0.1px;
     background-color: #575757;
     display: flex;
+    margin-top: 2px;
+    margin-bottom: 3px;
 }
 
 .horizantalMD-container {
