@@ -34,9 +34,10 @@ function Main() {
                 </div>
                 <div className='main-rotate-circle'></div>
                 <p className='main-description'>
-                    MZ와의 대화가 어려우셨나요?<br />
+                    <p>MZ와의 대화가 어려우셨나요?<br /></p>
                     이해하기 어려웠던 MZ 언어를 검색해보세요.
                 </p>
+
                 <button className='main-translate-button' onClick={() => { navigate('/translation') }}>
                     MZ 언어 번역하기
                     <span style={{ marginLeft: "12px" }}>►</span>
@@ -53,7 +54,7 @@ function Main() {
                 </div>
             </div>
             <div className='main-footer'>
-                <p>서울여자대학교 멋쟁이사자처럼 12TH</p>
+                <p style={{ marginTop: "50px" }}>서울여자대학교 멋쟁이사자처럼 12TH</p>
                 <a href="https://www.instagram.com/likelion_swu/">
                     <img src='/img/insta.png' alt='인스타그램' />
                 </a>
