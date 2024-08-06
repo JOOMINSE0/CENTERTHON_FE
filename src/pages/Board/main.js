@@ -40,9 +40,7 @@ function Main() {
 
                 <button className='main-translate-button' onClick={() => { navigate('/translation') }}>
                     MZ 언어 번역하기
-                    <span style={{ marginLeft: "12px" }}>
-                        <img src='/img/next.png' alt='다음' />
-                    </span>
+                    <span style={{ marginLeft: "12px", height: "60px" }}> ▶ </span>
                 </button>
                 <div className='main-footer-buttons'>
                     <div className='main-footer-button' onClick={() => { navigate('/board') }}>
@@ -56,12 +54,11 @@ function Main() {
                 </div>
             </div>
             <div className='main-footer'>
-                <p style={{marginBottom:"2px"}}>서울여자대학교 멋쟁이사자처럼 12TH</p>
-
+                <p style={{ marginTop: "50px" }}>서울여자대학교 멋쟁이사자처럼 12TH</p>
                 <a href="https://www.instagram.com/likelion_swu/">
-                    <img style={{width:"15px"}} src='/img/insta.png' alt='인스타그램' />
+                    <img src='/img/insta.png' alt='인스타그램' />
                 </a>
-                <p style={{marginTop:"-1px"}}>Copyright © 2024 likelion_swu. All rights reserved.</p>
+                <p>Copyright © 2024 likelion_swu. All rights reserved.</p>
             </div>
         </div>
     );
