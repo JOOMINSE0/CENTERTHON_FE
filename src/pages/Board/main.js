@@ -11,21 +11,21 @@ function Main() {
             <div className='main-content'>
                 <p className='main-title'>모지사전</p>
                 <p className='main-subtitle'>MZ’S LANGUAGE DICTIONARY</p>
-                <div className='bouncing-text'>
+                <div className='bouncing-text' style={{ marginTop: "10px", color: "#311683" }}>
                     <span>M</span>
                     <span>O</span>
                     <span>Z</span>
                     <span>E</span>
                     <span>E</span>
                 </div>
-                <div className='bouncing-text' style={{ marginTop: "90px" }}>
+                <div className='bouncing-text' style={{ marginTop: "90px", color: "#311683", opacity: 0.5 }}>
                     <span>M</span>
                     <span>O</span>
                     <span>Z</span>
                     <span>E</span>
                     <span>E</span>
                 </div>
-                <div className='bouncing-text' style={{ marginTop: "180px" }}>
+                <div className='bouncing-text' style={{ marginTop: "180px", color: "#311683" }}>
                     <span>M</span>
                     <span>O</span>
                     <span>Z</span>
