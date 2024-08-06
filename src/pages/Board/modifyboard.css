@@ -14,17 +14,18 @@
     color: #fff;
     margin-bottom: 10px;
     position: absolute;
-    margin-top: -195%;
+    margin-top: -200%;
     font-weight: bolder;
+    font-size: 16px;
 }
 
 .topX {
     width: 12px;
     height: 12px;
-    position: absolute;
-    margin-top: -198%;
     margin-left: 80%;
     cursor: pointer;
+    position: absolute;
+    margin-top: -203%;
 }
 
 

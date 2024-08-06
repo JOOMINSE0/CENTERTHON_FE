@@ -15,7 +15,7 @@
     color: #fff;
     margin-bottom: 10px;
     position: absolute;
-    margin-top: -186%;
+    margin-top: -193%;
     font-weight: bolder;
     font-size: 16px;
     font-family: 'Pretendard', sans-serif;
@@ -24,7 +24,7 @@
   .backLogo{
     width: 8px;
     height: 13px;
-    margin-top: -188%;
+    margin-top: -195%;
     margin-right: 80%;
     position: absolute;
     cursor: pointer;
@@ -36,14 +36,14 @@
     border-radius: 20px;
     padding-left: 20px;
     position: absolute;
-    margin-top: -148%;
+    margin-top: -160%;
   }
 
   .searchLogo{
     width: 14px;
     height: 14px;
     position: absolute;
-    margin-top: -148%;
+    margin-top: -160%;
     margin-left: 65%;
     cursor: pointer;
   }
@@ -59,7 +59,7 @@
   .container1{
     display: flex;
     position: absolute;
-    margin-top: -116%;
+    margin-top: -128%;
     margin-right: -60%;
     font-size: 12px;
   }
@@ -124,8 +124,8 @@
 
 .scroll {
   width: 393px;
-  height: 620px;
-  margin-top: 59%;
+  height: 645px;
+  margin-top: 53%;
   overflow-y: auto;
   position: absolute;
   display: flex;

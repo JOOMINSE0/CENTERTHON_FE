@@ -116,7 +116,7 @@ function Createboard() {
 
             <img
                 alt="취소버튼"
-                className='topX'
+                className='topXCB'
                 src='../../../img/X.png'
                 onClick={() => navigate(-1)}
             />
@@ -138,7 +138,7 @@ function Createboard() {
                         className='checkBtnCB'
                         onClick={handleConfirm}
                     >
-                        중복 확인
+                        확인
                     </button>
                 </div>
 
