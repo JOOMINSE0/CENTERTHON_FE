@@ -3,7 +3,6 @@ import './main.css';
 import { useNavigate } from 'react-router-dom';
 
 function Main() {
-
     const navigate = useNavigate();
     return (
         <div className='frameMain'>
@@ -52,7 +51,15 @@ function Main() {
                         <span>번역 기록</span>
                     </div>
                 </div>
-            </div></div>
+            </div>
+            <div className='main-footer'>
+                <p>서울여자대학교 멋쟁이사자처럼 12TH</p>
+                <a href="https://www.instagram.com/likelion_swu/">
+                    <img src='/img/insta.png' alt='인스타그램' />
+                </a>
+                <p>Copyright © 2024 likelion_swu. All rights reserved.</p>
+            </div>
+        </div>
     );
 }
 
